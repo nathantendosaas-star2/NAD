@@ -1,0 +1,403 @@
+import { Product, ShippingMethod } from '../types';
+
+export const PRODUCTS: Product[] = [
+  {
+    id: 'fela-tote-bag',
+    name: 'FELA TOTE BAG',
+    slug: 'fela-tote-bag',
+    price: 5000,
+    currency: 'KShs',
+    category: 'uncategorized',
+    categoryLabel: 'UNCATEGORIZED',
+    tag: 'Screen Printed',
+    inStock: true,
+    stockCount: 15,
+    images: [
+      'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=1200',
+    ],
+    description: 'Art-cycled heavy canvas tote bag with bold Fela Kuti screen-printed artwork and reinforced stitching.',
+    longDescription: [
+      'Handcrafted at Studio 18 in Kilimani, Nairobi. The Fela Tote Bag is cut from salvaged heavy cotton canvas rolls.',
+      'Features inner pocket compartment and durable shoulder straps engineered for daily carry.'
+    ],
+    materials: '100% upcycled heavy cotton canvas.',
+    care: 'Spot clean with mild soap and cold water.',
+    provenance: 'Studio 18, Kilimani, Nairobi, Kenya.',
+    sizes: ['One Size'],
+    colors: [
+      { name: 'Natural Tan', hex: '#D2C8B8', code: 'tan' },
+    ],
+    featured: true,
+  },
+  {
+    id: 'nad-friends-black-crop-jacket',
+    name: 'NAD & FRIENDS BLACK CROP JACKET',
+    slug: 'nad-friends-black-crop-jacket',
+    price: 25000,
+    currency: 'KShs',
+    category: 'exclusive',
+    categoryLabel: 'EXCLUSIVE · WOMEN',
+    tag: 'Exclusive',
+    inStock: true,
+    stockCount: 5,
+    images: [
+      'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&q=80&w=1200',
+    ],
+    description: 'Limited edition cropped utility jacket with custom brass hardware and hand-distressed selvedge denim trim.',
+    longDescription: [
+      'Part of the NAD & Friends capsule. Structured boxy fit with dropped shoulders and raw hem detailing.',
+      'Crafted entirely from art-cycled black raw denim and vintage tactical cotton.'
+    ],
+    materials: 'Reclaimed raw selvedge denim & antique brass zip.',
+    care: 'Dry clean only.',
+    provenance: 'Hand-assembled by master tailors at Studio 18, Nairobi.',
+    sizes: ['S', 'M', 'L'],
+    colors: [
+      { name: 'Onyx Black', hex: '#141414', code: 'black' },
+    ],
+    featured: true,
+  },
+  {
+    id: 'nad-friends-black-sleeveless-jacket',
+    name: 'NAD & FRIENDS BLACK SLEEVELESS JACKET',
+    slug: 'nad-friends-black-sleeveless-jacket',
+    price: 8500,
+    currency: 'KShs',
+    category: 'exclusive',
+    categoryLabel: 'EXCLUSIVE · UNISEX',
+    tag: 'Exclusive',
+    inStock: true,
+    stockCount: 8,
+    images: [
+      'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1200',
+    ],
+    description: 'Tactical raw denim vest with utility cargo pockets, D-ring accents, and signature NAD embroidery.',
+    longDescription: [
+      'Designed for layering across all seasons. Made from heavy 14oz black selvedge denim.'
+    ],
+    materials: '100% 14oz rigid selvedge denim.',
+    care: 'Cold hand wash inside out.',
+    provenance: 'Nairobi, Kenya.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: [
+      { name: 'Washed Black', hex: '#222222', code: 'black' },
+    ],
+    featured: true,
+  },
+  {
+    id: 'nad-friends-ft-trauphe-crop-jacket',
+    name: 'NAD & FRIENDS FT. TRAUPHE CROP JACKET',
+    slug: 'nad-friends-ft-trauphe-crop-jacket',
+    price: 25000,
+    currency: 'KShs',
+    category: 'exclusive',
+    categoryLabel: 'EXCLUSIVE · WOMEN',
+    tag: 'Collaboration',
+    inStock: true,
+    stockCount: 3,
+    images: [
+      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200',
+    ],
+    description: 'Collaborative art piece featuring Trauphe graphic embroidery on a tailored raw denim cropped canvas.',
+    longDescription: [
+      'Exhibited piece created for the Africa Fashion Diaspora showcase. Extremely rare run.'
+    ],
+    materials: 'Upcycled indigo denim and silk embroidery thread.',
+    care: 'Specialist dry clean.',
+    provenance: 'Kilimani Atelier, Nairobi.',
+    sizes: ['S', 'M'],
+    colors: [
+      { name: 'Deep Indigo', hex: '#1C2833', code: 'indigo' },
+    ],
+    featured: true,
+  },
+  {
+    id: 'nad-basics-script-black',
+    name: 'NAD BASICS SCRIPT BLACK',
+    slug: 'nad-basics-script-black',
+    price: 3500,
+    currency: 'KShs',
+    category: 'men',
+    categoryLabel: 'MEN · UNISEX',
+    tag: 'Basics',
+    inStock: true,
+    stockCount: 30,
+    images: [
+      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&q=80&w=1200',
+    ],
+    description: 'Heavyweight 240gsm organic cotton tee with puff-printed Nairobi Apparel District script logo.',
+    longDescription: [
+      'Pre-shrunk organic cotton jersey with relaxed boxy drop-shoulder silhouette.'
+    ],
+    materials: '100% 240gsm organic combed cotton.',
+    care: 'Machine wash cold inside out with like colors.',
+    provenance: 'Knitted & screen printed in Kenya.',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    colors: [
+      { name: 'Pitch Black', hex: '#111111', code: 'black' },
+    ],
+    featured: false,
+  },
+  {
+    id: 'nad-basics-script-wash',
+    name: 'NAD BASICS SCRIPT WASH',
+    slug: 'nad-basics-script-wash',
+    price: 4000,
+    currency: 'KShs',
+    category: 'men',
+    categoryLabel: 'MEN · UNISEX',
+    tag: 'Basics',
+    inStock: true,
+    stockCount: 22,
+    images: [
+      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=1200',
+    ],
+    description: 'Acid-washed vintage black tee with distressed script branding and double-stitched collar.',
+    longDescription: [
+      'Individually hand-washed for a unique faded vintage patina.'
+    ],
+    materials: '100% acid-washed organic cotton.',
+    care: 'Cold wash gentle.',
+    provenance: 'Nairobi, Kenya.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: [
+      { name: 'Acid Wash Grey', hex: '#3A3A3A', code: 'wash' },
+    ],
+    featured: false,
+  },
+  {
+    id: 'nad-black-usa-shirt',
+    name: 'NAD BLACK USA SHIRT',
+    slug: 'nad-black-usa-shirt',
+    price: 4000,
+    currency: 'KShs',
+    category: 'men',
+    categoryLabel: 'MEN · UNISEX',
+    tag: 'Graphic',
+    inStock: true,
+    stockCount: 16,
+    images: [
+      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=1200',
+    ],
+    description: 'Oversized graphic tee celebrating the diaspora connection with vintage American tour aesthetic.',
+    longDescription: [
+      'Heavyweight 220gsm cotton tee with soft-touch screen print.'
+    ],
+    materials: '100% heavy cotton jersey.',
+    care: 'Machine wash cold.',
+    provenance: 'Nairobi, Kenya.',
+    sizes: ['M', 'L', 'XL'],
+    colors: [
+      { name: 'Black', hex: '#1A1A1A', code: 'black' },
+    ],
+    featured: false,
+  },
+  {
+    id: 'monogram-military-jacket',
+    name: 'NAD MONOGRAM MILITARY JACKET',
+    slug: 'monogram-military-jacket',
+    price: 20000,
+    currency: 'KShs',
+    category: 'exclusive',
+    categoryLabel: 'EXCLUSIVE · MEN · UNISEX',
+    tag: 'Limited',
+    inStock: true,
+    stockCount: 12,
+    images: [
+      'https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&q=80&w=1200',
+    ],
+    description: 'Crafted from art-cycled raw denim and heavy organic cotton, featuring hand-embroidered monograms.',
+    longDescription: [
+      'Built to outlive trends, this flagship silhouette blends utility military tailoring with East African artisanal craftsmanship.',
+      'Designed in Studio 18 in Kilimani, Nairobi.'
+    ],
+    materials: '100% organic cotton canvas & upcycled raw indigo denim.',
+    care: 'Dry clean only.',
+    provenance: 'Kilimani, Nairobi, Kenya. Limited run of 12 garments.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: [
+      { name: 'Onyx Black', hex: '#1E1E1E', code: 'black' },
+      { name: 'Nairobi Navy', hex: '#1A237E', code: 'navy' },
+    ],
+    featured: true,
+  },
+  {
+    id: 'nad-monogram-military-crop-jacket',
+    name: 'NAD MONOGRAM MILITARY CROP JACKET',
+    slug: 'nad-monogram-military-crop-jacket',
+    price: 20000,
+    currency: 'KShs',
+    category: 'women',
+    categoryLabel: 'WOMEN',
+    tag: 'New',
+    inStock: true,
+    stockCount: 7,
+    images: [
+      'https://images.unsplash.com/photo-1554568218-0f1715e72254?auto=format&fit=crop&q=80&w=1200',
+    ],
+    description: 'Womens cropped iteration of our signature Monogram Military Jacket with elasticated hem.',
+    longDescription: [
+      'Tailored specifically for a high-waisted cropped silhouette.'
+    ],
+    materials: 'Upcycled selvedge denim & antique brass snap buttons.',
+    care: 'Dry clean only.',
+    provenance: 'Nairobi, Kenya.',
+    sizes: ['XS', 'S', 'M', 'L'],
+    colors: [
+      { name: 'Indigo Denim', hex: '#2A3C4D', code: 'indigo' },
+    ],
+    featured: true,
+  },
+  {
+    id: 'embroidered-swahili-shirt',
+    name: 'NAD SWAHILI EMBROIDERED CROP SHIRT',
+    slug: 'embroidered-swahili-shirt',
+    price: 7500,
+    currency: 'KShs',
+    category: 'exclusive',
+    categoryLabel: 'EXCLUSIVE · WOMEN',
+    tag: 'New',
+    inStock: true,
+    stockCount: 18,
+    images: [
+      'https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&q=80&w=1200',
+    ],
+    description: 'Heavyweight organic linen shirt adorned with Swahili geometric border stitching.',
+    longDescription: [
+      'An understated celebration of coastal Kenyan heritage. Cut from breathable raw organic linen.'
+    ],
+    materials: '100% pure organic linen. Mother-of-pearl buttons.',
+    care: 'Machine wash cold on gentle cycle.',
+    provenance: 'Mombasa & Kilimani.',
+    sizes: ['S', 'M', 'L'],
+    colors: [
+      { name: 'Bone White', hex: '#EBE7DF', code: 'bone' },
+    ],
+    featured: true,
+  },
+  {
+    id: 'kilimani-raw-denim-cargo',
+    name: 'KILIMANI RAW DENIM UTILITY CARGO',
+    slug: 'kilimani-raw-denim-cargo',
+    price: 12800,
+    currency: 'KShs',
+    category: 'unisex',
+    categoryLabel: 'UNISEX · MEN',
+    tag: 'New',
+    inStock: true,
+    stockCount: 9,
+    images: [
+      'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&q=80&w=1200',
+    ],
+    description: 'Unwashed 14oz Kenyan raw selvedge denim with modular utility pockets and red bar-tacks.',
+    longDescription: [
+      'Built for lifetime durability. Begins stiff and molds to your personal silhouette with wear.'
+    ],
+    materials: '100% raw rigid selvedge denim from Eldoret.',
+    care: 'Cold soak or wear raw for 6 months before first wash.',
+    provenance: 'Eldoret & Kilimani.',
+    sizes: ['28', '30', '32', '34', '36'],
+    colors: [
+      { name: 'Deep Indigo', hex: '#1C2833', code: 'indigo' },
+    ],
+    featured: true,
+  },
+  {
+    id: 'nad-denim-jersey-00',
+    name: 'NAD DENIM JERSEY 00',
+    slug: 'nad-denim-jersey-00',
+    price: 15000,
+    currency: 'KShs',
+    category: 'men',
+    categoryLabel: 'MEN · UNISEX',
+    tag: 'Statement',
+    inStock: true,
+    stockCount: 6,
+    images: [
+      'https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&q=80&w=1200',
+    ],
+    description: 'Deconstructed denim sports jersey constructed from contrast-washed selvedge panels.',
+    longDescription: [
+      'Features embroidered "00" numbering on back and ribbed athletic V-neck collar.'
+    ],
+    materials: 'Upcycled lightweight denim & cotton ribbing.',
+    care: 'Gentle hand wash cold.',
+    provenance: 'Studio 18, Kilimani.',
+    sizes: ['M', 'L', 'XL'],
+    colors: [
+      { name: 'Two-Tone Denim', hex: '#3B5998', code: 'denim' },
+    ],
+    featured: true,
+  },
+];
+
+export const SHIPPING_METHODS: ShippingMethod[] = [
+  {
+    id: 'standard',
+    name: 'Standard Tracked (5–7 Days)',
+    estimatedDays: '5–7 Business Days',
+    price: 1500,
+  },
+  {
+    id: 'express',
+    name: 'Express DHL Courier (2–4 Days)',
+    estimatedDays: '2–4 Business Days',
+    price: 4500,
+  },
+];
+
+export const COUNTRY_DISTRICTS: Record<string, string[]> = {
+  Kenya: [
+    'Nairobi County',
+    'Mombasa County',
+    'Kiambu County',
+    'Nakuru County',
+    'Kisumu County',
+    'Uasin Gishu County (Eldoret)',
+    'Machakos County',
+    'Kilifi County',
+    'Kajiado County',
+  ],
+  Uganda: [
+    'Kampala Central',
+    'Wakiso District',
+    'Entebbe',
+    'Jinja',
+    'Mbarara',
+    'Gulu',
+  ],
+  Tanzania: [
+    'Dar es Salaam (Kinondoni / Ilala)',
+    'Arusha',
+    'Zanzibar Urban/West',
+    'Mwanza',
+  ],
+  Rwanda: [
+    'Kigali (Gasabo / Kicukiro / Nyarugenge)',
+    'Rubavu',
+    'Musanze',
+  ],
+  'United Kingdom': [
+    'Greater London',
+    'West Midlands (Birmingham)',
+    'Greater Manchester',
+    'West Yorkshire (Leeds)',
+    'Scotland (Edinburgh / Glasgow)',
+  ],
+  'United States': [
+    'New York (NYC Metro)',
+    'California (Los Angeles / Bay Area)',
+    'Georgia (Atlanta)',
+    'Texas (Houston / Dallas)',
+    'Illinois (Chicago)',
+  ],
+  Germany: [
+    'Berlin',
+    'Bavaria (Munich)',
+    'North Rhine-Westphalia (Cologne / Düsseldorf)',
+    'Hamburg',
+    'Hesse (Frankfurt)',
+  ],
+};

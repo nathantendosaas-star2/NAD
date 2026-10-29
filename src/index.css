@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Outfit:wght@300;400;600;700&display=swap');
+@import "tailwindcss";
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+:root {
+  --canvas-light: #EFEBE3;
+  --surface-cream: #F8F5EE;
+  --surface-card: #FFFFFF;
+  --surface-elevated: #FFFFFF;
+  --nad-red: #C9473B;
+  --nad-red-hover: #b03c31;
+  --charcoal-dark: #141414;
+  --muted-text: #6E685E;
+  --hairline: rgba(20, 20, 20, 0.08);
+  --hairline-warm: #DCD5C9;
+  --hairline-red: rgba(201, 71, 59, 0.35);
+  --soft-pink: #F7C2E8;
+  --deep-green: #1B2215;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--canvas-light);
+  color: var(--charcoal-dark);
+  margin: 0;
+  overflow-x: hidden;
+  selection-background-color: var(--nad-red);
+  selection-color: #ffffff;
+}
+
+::selection {
+  background-color: #C9473B;
+  color: #ffffff;
+}
+
+.font-serif-heavy {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.font-clash {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 0.92;
+}
+
+.font-satoshi {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Awwwards Architectural Grid & Crosshair Accents */
+.crosshair-box {
+  position: relative;
+}
+
+.crosshair-box::before,
+.crosshair-box::after {
+  content: "+";
+  position: absolute;
+  font-family: monospace;
+  font-size: 11px;
+  line-height: 1;
+  color: rgba(201, 71, 59, 0.5);
+  pointer-events: none;
+}
+
+.crosshair-box::before {
+  top: -6px;
+  left: -6px;
+}
+
+.crosshair-box::after {
+  bottom: -6px;
+  right: -6px;
+}
+
+/* Parallax Stage Architecture */
+.parallax-zone {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-zone {
+  min-height: 88vh;
+  height: 94vh;
+}
+
+@media (min-width: 768px) {
+  .hero-zone {
+    height: 96vh;
+    min-height: 640px;
+  }
+}
+
+.product-zone {
+  min-height: 70vh;
+  height: 80vh;
+}
+
+.teaser-zone {
+  min-height: 65vh;
+  height: 75vh;
+}
+
+.sticky-stage {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.parallax-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+/* Infinite Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 25s linear infinite;
+}
+
+/* Rotating Scroll Badge */
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 14s linear infinite;
+}
+
+/* Minimal Scrollbar for Light Minimalist Luxury Aesthetic */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--canvas-light);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(20, 20, 20, 0.18);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nad-red);
+}
+
+/* Hide native scrollbar for horizontal containers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Reduced Motion Compliance */
+@media (prefers-reduced-motion: reduce) {
+  .parallax-layer {
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-marquee {
+    animation: none !important;
+  }
+  .animate-spin-slow {
+    animation: none !important;
+  }
+}

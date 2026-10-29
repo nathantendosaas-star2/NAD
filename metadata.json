@@ -1,0 +1,6 @@
+{
+  "name": "Nairobi Apparel District | Minimalist Luxury Streetwear",
+  "description": "Art-cycled Kenyan streetwear and controlled high-velocity parallax flagship for Nairobi Apparel District. Built to outlive trends.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

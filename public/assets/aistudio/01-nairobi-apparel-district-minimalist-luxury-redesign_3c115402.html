@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nairobi Apparel District | Minimalist Luxury Streetwear</title>
+    <meta name="description" content="Art-cycled Kenyan streetwear. Premium sustainability.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        @import url('https://api.fontshare.com/v2/css?f[]=clash-display@700&f[]=satoshi@400,500,700&display=swap');
+
+        :root {
+            --beige: #E4E2DD;
+            --dark: #1E1E1E;
+            --nad-red: #C9473B;
+            --max-travel: 48px;
+        }
+
+        * {
+            border-radius: 0 !important;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: 'Satoshi', sans-serif;
+            background-color: var(--beige);
+            color: var(--dark);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .font-clash {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.08em;
+            line-height: 0.9;
+        }
+
+        /* Parallax Structure */
+        .parallax-zone {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .hero-zone { height: 200vh; }
+        .product-zone { height: 180vh; }
+        .teaser-zone { height: 160vh; }
+
+        .sticky-stage {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .parallax-layer {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            will-change: transform;
+        }
+
+        /* Section Spacing */
+        .section-padding { padding-top: 15vh; padding-bottom: 15vh; }
+
+        /* Navigation */
+        nav a {
+            transition: color 0.2s ease;
+        }
+        nav a:hover {
+            color: var(--nad-red);
+        }
+
+        /* Product Cards */
+        .product-img-wrap {
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover .product-img-wrap {
+            transform: scale(1.03);
+        }
+        .product-card:hover .view-link {
+            border-bottom: 1px solid var(--nad-red);
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            .parallax-layer {
+                transform: none !important;
+                transition: none !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--beige);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        
+        <!-- Minimal Navigation -->
+        <header class="fixed top-0 left-0 w-full z-[100] bg-[#E4E2DD]">
+            <div class="flex items-center justify-between px-8 py-6 max-w-[1920px] mx-auto">
+                <a href="https://p.superdesign.dev/draft/a0edfcf5-2ec0-4949-88e7-d15b5f9aafcf" id="nav-logo-link" class="font-clash text-[2.5vw] uppercase text-[var(--nad-red)]">NAD</a>
+                
+                <nav class="hidden md:flex items-center space-x-12">
+                    <a href="#shop" id="nav-shop-link" class="font-satoshi font-medium text-[14px] tracking-[0.1em] uppercase">Shop</a>
+                    <a href="#collection" id="nav-collection-link" class="font-satoshi font-medium text-[14px] tracking-[0.1em] uppercase">Collection</a>
+                    <a href="#about" id="nav-about-link" class="font-satoshi font-medium text-[14px] tracking-[0.1em] uppercase">About</a>
+                </nav>
+
+                <div class="flex items-center space-x-8">
+                    <a href="https://p.superdesign.dev/draft/51ff2919-f0d7-4da9-b74d-f74f31b09a29" id="nav-cart-link" class="relative group">
+                        <iconify-icon icon="lucide:shopping-bag" class="text-xl group-hover:text-[var(--nad-red)]"></iconify-icon>
+                        <span class="absolute -top-1 -right-1 text-[9px] font-bold">0</span>
+                    </a>
+                    <button id="mobile-nav-toggle" class="md:hidden">
+                        <iconify-icon icon="lucide:menu" class="text-2xl"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero Parallax Section -->
+            <section class="parallax-zone hero-zone" data-parallax-scene>
+                <div class="sticky-stage">
+                    <!-- Layer 1: Image (Slowest) -->
+                    <div class="parallax-layer z-0" data-depth="-0.5">
+                        <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&q=80&w=2000" alt="NAD Hero" class="w-full h-full object-cover grayscale brightness-90">
+                    </div>
+                    
+                    <!-- Layer 2: Text Overlay (Fastest) -->
+                    <div class="parallax-layer z-20 flex flex-col justify-end p-12" data-depth="0.8">
+                        <div class="max-w-[1920px] w-full mx-auto">
+                            <h1 class="font-clash text-[18vw] text-[var(--nad-red)] uppercase leading-none mb-6">Disposable</h1>
+                            <p class="font-satoshi text-lg max-w-[30ch] tracking-wide leading-relaxed">
+                                Built to outlive trends. Art-cycled Kenyan streetwear redefining sustainability.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section (Minimal) -->
+            <section class="section-padding bg-[var(--beige)]">
+                <div class="max-w-3xl mx-auto px-6">
+                    <h2 class="font-clash text-[6vw] text-[var(--nad-red)] mb-16">The Heart of Art and Upcycling</h2>
+                    <div class="space-y-[8vh] font-satoshi text-[18px] leading-[1.8] opacity-90">
+                        <p>Nairobi Apparel District is a Kenyan streetwear brand known as “The Heart of Art and Upcycling.” We emphasize art, upcycling, recycling, and the use of sustainable fabrics.</p>
+                        <p>We take pride in our exclusive Kenyan designs and customer-tailored products, while also committing to reducing the environmental impact of the fast fashion industry.</p>
+                        <p>Our vision is to be a leading voice in advocacy, cultural influence, and awareness creation through art and fashion. Each piece is a canvas for sustainable storytelling.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Product Showcase Parallax -->
+            <section class="parallax-zone product-zone" data-parallax-scene>
+                <div class="sticky-stage bg-[#1E1E1E]">
+                    <div class="parallax-layer z-0" data-depth="-0.4">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=2000" alt="Product Display" class="w-full h-full object-cover opacity-60">
+                    </div>
+                    <div class="parallax-layer z-10 flex items-center justify-center" data-depth="0.5">
+                        <div class="text-center">
+                            <h3 class="font-clash text-[10vw] text-white uppercase">Raw Denim</h3>
+                            <p class="font-satoshi text-white/60 tracking-[0.2em] uppercase mt-4">KShs 9,500.00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Product Grid -->
+            <section class="section-padding">
+                <div class="max-w-[1920px] mx-auto px-8 md:px-16">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-[4vw]">
+                        <!-- Product 1 -->
+                        <a href="https://p.superdesign.dev/draft/3d499eea-4a75-482f-b065-e448217f4097" id="product-1-link" class="product-card group">
+                            <div class="aspect-[3/4] overflow-hidden bg-white mb-6">
+                                <img src="https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&q=80&w=1200" alt="Jacket" class="product-img-wrap w-full h-full object-cover" loading="lazy">
+                            </div>
+                            <div class="flex justify-between items-baseline">
+                                <div>
+                                    <h4 class="font-satoshi text-base font-medium">Monogram Military Jacket</h4>
+                                    <span class="font-satoshi text-sm opacity-60">KShs 20,000.00</span>
+                                </div>
+                                <span class="view-link font-satoshi text-xs font-bold uppercase tracking-widest">View</span>
+                            </div>
+                        </a>
+
+                        <!-- Product 2 -->
+                        <a href="#product-2" id="product-2-link" class="product-card group">
+                            <div class="aspect-[3/4] overflow-hidden bg-white mb-6">
+                                <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&q=80&w=1200" alt="Shirt" class="product-img-wrap w-full h-full object-cover" loading="lazy">
+                            </div>
+                            <div class="flex justify-between items-baseline">
+                                <div>
+                                    <h4 class="font-satoshi text-base font-medium">Embroidered Swahili Shirt</h4>
+                                    <span class="font-satoshi text-sm opacity-60">KShs 7,500.00</span>
+                                </div>
+                                <span class="view-link font-satoshi text-xs font-bold uppercase tracking-widest">View</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Collection Teaser Parallax -->
+            <section class="parallax-zone teaser-zone" data-parallax-scene>
+                <div class="sticky-stage">
+                    <div class="parallax-layer z-0" data-depth="-0.35">
+                        <img src="https://images.unsplash.com/photo-1554568218-0f1715e72254?auto=format&fit=crop&q=80&w=2000" alt="Collection Teaser" class="w-full h-full object-cover">
+                    </div>
+                    <div class="parallax-layer z-10 flex flex-col items-end justify-center p-12" data-depth="0.6">
+                        <div class="text-right">
+                            <h3 class="font-clash text-[8vw] text-white uppercase mix-blend-difference">Built to Outlive</h3>
+                            <a href="#shop" id="teaser-explore-link" class="inline-block mt-8 font-satoshi text-xl text-[var(--nad-red)] uppercase tracking-widest border-b border-[var(--nad-red)] pb-2">Explore Collection</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter -->
+            <section class="section-padding bg-[#1E1E1E]">
+                <div class="max-w-[400px] mx-auto text-center px-6">
+                    <h2 class="font-clash text-[5vw] text-[var(--beige)] uppercase mb-12">Stay in the Loop</h2>
+                    <form class="space-y-6">
+                        <input type="email" placeholder="EMAIL ADDRESS*" class="w-full bg-transparent border-b border-white/20 py-4 font-satoshi text-white placeholder-white/40 focus:outline-none focus:border-[var(--nad-red)]">
+                        <button type="submit" id="newsletter-btn" class="w-full py-4 bg-[var(--beige)] text-[#1E1E1E] font-bold text-xs uppercase tracking-widest hover:opacity-80 transition-opacity">Subscribe</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-[var(--beige)] pt-[10vh] pb-12 px-[8vw]">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 mb-24">
+                <div>
+                    <span class="font-clash text-2xl uppercase">NAD</span>
+                    <p class="font-satoshi text-xs opacity-50 mt-4 leading-relaxed">The heart of art and up-cycling.<br>Nairobi, Kenya.</p>
+                </div>
+                <div>
+                    <h5 class="font-satoshi font-bold text-[10px] tracking-widest uppercase mb-6">Links</h5>
+                    <ul class="space-y-3 font-satoshi text-[13px] opacity-70">
+                        <li><a href="https://p.superdesign.dev/draft/a0edfcf5-2ec0-4949-88e7-d15b5f9aafcf" id="f-home" class="text-[var(--nad-red)]">Home</a></li>
+                        <li><a href="#shop" id="f-shop">Shop</a></li>
+                        <li><a href="#about" id="f-about">About</a></li>
+                        <li><a href="#contact" id="f-contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-satoshi font-bold text-[10px] tracking-widest uppercase mb-6">Social</h5>
+                    <ul class="space-y-3 font-satoshi text-[13px] opacity-70">
+                        <li><a href="#instagram" id="f-ig">Instagram</a></li>
+                        <li><a href="#tiktok" id="f-tt">TikTok</a></li>
+                        <li><a href="#youtube" id="f-yt">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex justify-between items-center pt-8 border-t border-dark/5">
+                <p class="font-satoshi text-[11px] opacity-30">© 2025 Nairobi Apparel District Worldwide.</p>
+                <div class="flex space-x-8 font-satoshi text-[11px] opacity-30">
+                    <a href="#privacy" id="privacy">Privacy</a>
+                    <a href="#terms" id="terms">Terms</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Parallax System
+        const scenes = document.querySelectorAll('[data-parallax-scene]');
+        const clamp = (val, min, max) => Math.min(max, Math.max(min, val));
+        let frame = 0;
+
+        function updateParallax() {
+            frame = 0;
+            const scrollY = window.pageYOffset;
+            const viewportHeight = window.innerHeight;
+
+            scenes.forEach(scene => {
+                const rect = scene.getBoundingClientRect();
+                
+                // Only calculate for visible sections
+                if (rect.bottom < 0 || rect.top > viewportHeight) return;
+
+                const layers = [...scene.querySelectorAll('[data-depth]')];
+                const span = Math.max(1, scene.offsetHeight - viewportHeight);
+                const progress = clamp(-rect.top / span, 0, 1);
+                
+                const maxTravel = 48;
+                const intensity = 0.95;
+
+                layers.forEach(layer => {
+                    const depth = clamp(Number(layer.dataset.depth) || 0, -1, 1);
+                    const offsetY = (progress - 0.5) * 2 * depth * maxTravel * intensity;
+                    
+                    // Apply transform
+                    layer.style.transform = `translate3d(0, ${offsetY.toFixed(2)}px, 0) scale(1.16)`;
+                });
+            });
+        }
+
+        function scheduleUpdate() {
+            if (!frame) {
+                frame = requestAnimationFrame(updateParallax);
+            }
+        }
+
+        // Initialization
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            window.addEventListener('scroll', scheduleUpdate, { passive: true });
+            window.addEventListener('resize', scheduleUpdate, { passive: true });
+            updateParallax();
+        }
+
+        // Intersection Observer for active state
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Section entered viewport
+                }
+            });
+        }, { threshold: 0.1 });
+
+        scenes.forEach(scene => observer.observe(scene));
+    </script>
+</body>
+</html>

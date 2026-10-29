@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed-variant": "#3c4d00", "tertiary-fixed": "#cde5ff", "inverse-primary": "#5355aa", "on-surface-variant": "#c7c5d3", "primary": "#c0c1ff", "on-secondary": "#293500", "on-surface": "#e3e2e8", "secondary-fixed": "#d4ed89", "on-primary": "#232479", "surface-container-lowest": "#0d0e12", "surface-container-low": "#1a1b20", "primary-fixed": "#e1e0ff", "on-secondary-container": "#b5cc6c", "on-secondary-fixed": "#161e00", "surface-container-highest": "#343439", "primary-fixed-dim": "#c0c1ff", "inverse-surface": "#e3e2e8", "secondary-fixed-dim": "#b9d070", "surface-container": "#1e1f24", "on-tertiary": "#14334b", "secondary": "#b9d070", "inverse-on-surface": "#2f3035", "tertiary-fixed-dim": "#accae8", "on-tertiary-fixed-variant": "#2d4963", "on-tertiary-container": "#7592ae", "on-error": "#690005", "on-primary-fixed": "#0a0565", "primary-container": "#191970", "surface-bright": "#38393e", "tertiary-container": "#082a42", "outline-variant": "#464651", "on-error-container": "#ffdad6", "surface-tint": "#c0c1ff", "surface-container-high": "#292a2e", "background": "#121317", "surface-variant": "#343439", "surface": "#121317", "on-primary-container": "#8386de", "error-container": "#93000a", "surface-dim": "#121317", "on-primary-fixed-variant": "#3b3d90", "tertiary": "#accae8", "on-background": "#e3e2e8", "outline": "#918f9d", "secondary-container": "#445700", "error": "#ffb4ab", "on-tertiary-fixed": "#001d32" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-lg": "1.75rem", "space-md": "1rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem", "space-xl": "3rem", "margin-tablet": "2rem", "margin": "4rem", "margin-mobile": "1.25rem", "gutter": "1.5rem" }, "fontFamily": { "display-hero-mobile": [ "Syne" ], "headline-md": [ "Syne" ], "body-xl": [ "Hanken Grotesk" ], "display-hero": [ "Syne" ], "headline-xl": [ "Syne" ], "body-md": [ "Hanken Grotesk" ], "headline-lg": [ "Syne" ], "headline-xl-mobile": [ "Syne" ], "headline-sm": [ "Syne" ], "body-lg": [ "Hanken Grotesk" ], "button-text": [ "Hanken Grotesk" ], "label-caps": [ "JetBrains Mono" ], "label-data": [ "JetBrains Mono" ] }, "fontSize": { "display-hero-mobile": [ "44px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" } ], "headline-md": [ "26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-xl": [ "20px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "display-hero": [ "84px", { "lineHeight": "92px", "letterSpacing": "-0.04em", "fontWeight": "800" } ], "headline-xl": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" } ], "body-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-lg": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-xl-mobile": [ "34px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-sm": [ "20px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" } ], "button-text": [ "13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" } ], "label-caps": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "500" } ], "label-data": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "400" } ] } } } };</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md"><img alt="Image from https://nairobiappareldistrict.com/wp-content/uploads/2025/07/Nairobi-Logo.png" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XRRXqVJBaSWWRE0DngcVhFnzl34m52yFKI_xu9Rn2vY2q951EbmcN5T52pO9JiJau2Ye2y-wEFOGFgXwOlVHv-pjHYgHnj_dM6AsF0v_Hc8bs4OsG4EcdeiG7xAsXPx6yQ6wWbEekwpwVm31wYqILvPAXw2o7NCWaflUEGNdTFrRXyaTZ2fEgkTbEr6Gm1jgrobBU6YVHxmY7lkjfdE7Ry3CiEmhADKZ56kK55u8ZKjw"/><span class="hidden sm:inline-block font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface">NAD</span></div><nav class="hidden lg:flex items-center gap-gutter" data-active-classes="text-secondary"><a aria-current="page" class="font-button-text uppercase tracking-widest transition-colors text-secondary" data-path="collection" href="#">Collection</a><a class="font-button-text text-button-text uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors" data-path="men" href="#">Men</a><a class="font-button-text text-button-text uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors" data-path="women" href="#">Women</a><a class="font-button-text text-button-text uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors" data-path="unisex" href="#">Unisex</a><a class="font-button-text text-button-text uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors" data-path="exclusive" href="#">Exclusive</a><a class="font-button-text text-button-text uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors" data-path="story" href="#">Story</a></nav><div class="flex items-center gap-space-sm md:gap-space-md"><div class="hidden sm:flex items-center font-label-caps text-label-caps text-on-surface-variant bg-surface-container px-space-sm py-space-xs rounded"><span class="text-secondary mr-space-xs">●</span>KSh · KE</div><button aria-label="Search Archive" class="p-space-xs text-on-surface-variant hover:text-on-surface transition-colors flex items-center" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button><a class="relative p-space-xs text-on-surface-variant hover:text-on-surface transition-colors flex items-center" data-path="cart" href="#"><span class="material-symbols-outlined text-[20px]">shopping_bag</span><span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-secondary text-on-secondary font-label-data text-[10px] flex items-center justify-center font-bold">0</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- Minimal Ambient Hero Section -->
+<section class="relative w-full overflow-hidden bg-surface py-space-xl lg:py-28">
+<!-- Atmospheric Ambient Glows -->
+<div class="pointer-events-none absolute -top-32 -left-20 h-96 w-96 rounded-full bg-primary-container/40 blur-[130px]"></div>
+<div class="pointer-events-none absolute top-1/4 -right-20 h-80 w-80 rounded-full bg-secondary/10 blur-[120px]"></div>
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin">
+<!-- Minimalist Ticker Pill -->
+<div class="inline-flex items-center gap-space-sm bg-surface-container-high/60 backdrop-blur-xl px-space-md py-1.5 rounded-full mb-space-lg shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-caps text-label-caps uppercase text-tertiary tracking-widest">
+          Worldwide Shipping · Sustainable Handcrafted Fashion
+        </span>
+</div>
+<!-- Hero Typography & Editorial Stance -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-end">
+<div class="lg:col-span-8 space-y-space-md">
+<p class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-secondary">
+            [ ARCHIVAL REVISION 2025 ]
+          </p>
+<h1 class="font-display-hero text-headline-xl sm:text-headline-xl lg:text-display-hero uppercase text-on-surface tracking-tighter leading-none">
+            NOT ANOTHER<br/>
+<span class="text-tertiary">DISPOSABLE.</span>
+</h1>
+<p class="font-body-xl text-body-xl text-on-surface-variant max-w-xl pt-space-xs">
+            Art-cycled Kenyan streetwear. Built to outlive trends through conscious tailoring, upcycled military canvas, and refined metropolitan utility.
+          </p>
+</div>
+<!-- Technical Spec Pill & CTA Trigger (Inspired by Graphic Palette System) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md lg:items-end">
+<div class="w-full sm:w-72 bg-primary-container/25 backdrop-blur-2xl p-space-md rounded-xl shadow-lg relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Edition 04</span>
+<span class="font-label-caps text-label-caps uppercase bg-secondary/15 text-secondary px-space-xs py-0.5 rounded-full">RAW RUN</span>
+</div>
+<div class="grid grid-cols-3 gap-2 font-label-data text-label-data text-on-surface-variant">
+<div>
+<span class="block text-outline text-[10px]">CMYK</span>
+<span>27, 14, 0, 14</span>
+</div>
+<div>
+<span class="block text-outline text-[10px]">RGB</span>
+<span>160, 189, 219</span>
+</div>
+<div>
+<span class="block text-outline text-[10px]">HEX</span>
+<span class="text-tertiary">#A0BDDB</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<a class="flex-1 sm:flex-none text-center bg-secondary hover:bg-secondary-fixed text-on-secondary font-button-text text-button-text uppercase px-space-lg py-space-sm rounded transition-all hover:scale-[0.98] shadow-md" href="#collection-grid">
+              Shop Latest Collection
+            </a>
+<a class="flex-1 sm:flex-none text-center bg-surface-container-high/80 hover:bg-surface-container-highest text-on-surface font-button-text text-button-text uppercase px-space-md py-space-sm rounded transition-all" href="#philosophy">
+              Our Philosophy
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Curated Product Collection Grid -->
+<section class="w-full bg-surface-container-lowest py-space-xl lg:py-24" id="collection-grid">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin">
+<!-- Section Header & Filter Controls -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-secondary block mb-space-xs">
+            01 / CATALOGUE RELEASE
+          </span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">
+            Curated Garment Matrix
+          </h2>
+</div>
+<!-- Filter Pills -->
+<div class="flex flex-wrap items-center gap-space-xs" id="filter-container">
+<button class="filter-btn bg-secondary text-on-secondary font-button-text text-button-text uppercase px-space-md py-space-xs rounded-full transition-all" data-filter="all">
+            All Works
+          </button>
+<button class="filter-btn bg-surface-container-high text-on-surface-variant hover:text-on-surface font-button-text text-button-text uppercase px-space-md py-space-xs rounded-full transition-all" data-filter="exclusive">
+            Exclusive
+          </button>
+<button class="filter-btn bg-surface-container-high text-on-surface-variant hover:text-on-surface font-button-text text-button-text uppercase px-space-md py-space-xs rounded-full transition-all" data-filter="jackets">
+            Jackets
+          </button>
+<button class="filter-btn bg-surface-container-high text-on-surface-variant hover:text-on-surface font-button-text text-button-text uppercase px-space-md py-space-xs rounded-full transition-all" data-filter="shirts">
+            Shirts
+          </button>
+</div>
+</div>
+<!-- 6-Product Responsive Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product 1 -->
+<article class="product-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="jackets exclusive">
+<div class="relative aspect-[3/4] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Editorial lookbook photograph of a structured luxury upcycled streetwear crop jacket crafted by Kenyan designers, featuring sharp geometric panels, heavy tactile embroidery, deep navy and frozen blue tones with high fashion studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfXnywK7wmfrA_VnPtUIL1dGwQGClKxZ-rF5upjicc8T3EOYN5upmkpFGzFEe4ieg38Ot_8oAmv03iaWuWaV6XZQPA_Q9mhgSb4Q24DrGzMgMZnQ6SFqOq1xwwe-eNrtIwsKC-21atpI2FXrLHyY7OD4o5_OzneUCK9LTzmHLzaICG2z0EhcxSK8MXA-R5juLWXAG1NxKjMkEdlDXkZOtpJoBFmIhA6_WZqjzRAe_G"/>
+<div class="absolute top-space-sm left-space-sm">
+<span class="bg-surface-container-highest/90 backdrop-blur-md font-label-caps text-label-caps uppercase text-secondary px-2.5 py-1 rounded-full">
+                Collab Capsule
+              </span>
+</div>
+<div class="absolute bottom-space-sm right-space-sm">
+<span class="bg-primary-container/80 backdrop-blur-md font-label-data text-label-data text-tertiary px-2.5 py-1 rounded">
+                1 OF 20 HANDMADE
+              </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-grow gap-space-md">
+<div>
+<div class="flex justify-between items-start mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface leading-snug">
+                  NAD &amp; Friends ft. Trauphe Crop Jacket
+                </h3>
+</div>
+<p class="font-label-caps text-label-caps uppercase text-on-surface-variant">Women / Exclusive Run</p>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-lowest/40 -mx-space-md -mb-space-md p-space-md">
+<span class="font-label-data text-body-lg font-bold text-secondary">
+                KShs 25,000.00
+              </span>
+<button class="bg-secondary text-on-secondary hover:bg-secondary-fixed font-button-text text-button-text uppercase px-space-md py-space-xs rounded transition-all hover:scale-95 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">add</span>
+                Reserve
+              </button>
+</div>
+</div>
+</article>
+<!-- Product 2 -->
+<article class="product-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="jackets">
+<div class="relative aspect-[3/4] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Avant-garde high fashion tailored monogram military crop jacket displayed on a model in Nairobi, utilizing reclaimed dark canvas and tactical hardware accents with moody chiaroscuro lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAihE7yZqEoZN5HxDmrzAOE39ctm1dhZ24r7GHqW3GNTCk-HSQoV4AdBqdpTQ15Q2NZ_GmXGHXPOClNKY6WKfJ7WEUuYmfVgL3vR9o2iHfGcdpddf3fqcDNXGp1_fk6fE7bNadKpzdGS_d_ydSOCFZcz0vrUeNXPgltxJbj88fXFM-FrHWfGBhLYYGgOmarnPpvkZMiGc2_ok_7iuQCh5JQpL7H893cSeD1bb-kGu-6"/>
+<div class="absolute top-space-sm left-space-sm">
+<span class="bg-surface-container-highest/90 backdrop-blur-md font-label-caps text-label-caps uppercase text-tertiary px-2.5 py-1 rounded-full">
+                Tactical Monogram
+              </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-grow gap-space-md">
+<div>
+<div class="flex justify-between items-start mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface leading-snug">
+                  NAD Monogram Military Crop Jacket
+                </h3>
+</div>
+<p class="font-label-caps text-label-caps uppercase text-on-surface-variant">Women's Architecture</p>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-lowest/40 -mx-space-md -mb-space-md p-space-md">
+<span class="font-label-data text-body-lg font-bold text-secondary">
+                KShs 20,000.00
+              </span>
+<button class="bg-secondary text-on-secondary hover:bg-secondary-fixed font-button-text text-button-text uppercase px-space-md py-space-xs rounded transition-all hover:scale-95 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">add</span>
+                Reserve
+              </button>
+</div>
+</div>
+</article>
+<!-- Product 3 -->
+<article class="product-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="jackets exclusive">
+<div class="relative aspect-[3/4] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Editorial lookbook shot of a full-length unisex oversized military jacket featuring artisan screenprinted African typographic motifs and precision tailoring on dense dark blue wool and denim" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJcVvTRTxfCoL9vitSqLVmFPq-QCHduc56DiWbdJgWXRFLre5jbdRuOkfLhj2eqpb06VGh9GF1xnJiUeqGNz7-BFo5jUHjH4yA46VUbfx60_qywcHspE02Kop5zFbYnnE2PzhABg4X7UsIMcqY4s5uhgD9ywgOB_g5jsK6qHQEC69G-63DheQg51Y_dHpE7ZoqnwV-ubHa1yb3QSblxlZL2nedfjfnneacyEPpw0q5"/>
+<div class="absolute top-space-sm left-space-sm">
+<span class="bg-surface-container-highest/90 backdrop-blur-md font-label-caps text-label-caps uppercase text-secondary px-2.5 py-1 rounded-full">
+                Unisex Icon
+              </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-grow gap-space-md">
+<div>
+<div class="flex justify-between items-start mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface leading-snug">
+                  NAD Monogram Military Jacket
+                </h3>
+</div>
+<p class="font-label-caps text-label-caps uppercase text-on-surface-variant">Unisex / Archival Drop</p>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-lowest/40 -mx-space-md -mb-space-md p-space-md">
+<span class="font-label-data text-body-lg font-bold text-secondary">
+                KShs 20,000.00
+              </span>
+<button class="bg-secondary text-on-secondary hover:bg-secondary-fixed font-button-text text-button-text uppercase px-space-md py-space-xs rounded transition-all hover:scale-95 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">add</span>
+                Reserve
+              </button>
+</div>
+</div>
+</article>
+<!-- Product 4 -->
+<article class="product-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="jackets exclusive">
+<div class="relative aspect-[3/4] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Luxury obsidian black cropped jacket with heavy industrial silver metal zips and geometric deconstructed silhouette, photographed against a minimalist deep blue concrete architectural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcnSxpFcMnKKmAI3nTnCi4pB8XIk7OKuBDUOpb4nr7bCjUOUssaco8mrQCKM-p2yYCO6Q6ZFFhUBySy5JUCQ_pmb_tHrh6_-AwPeM6IIjPqZtsHQ9FcprXZdCt6YBj_-nOn9qL8wZEKrAcSyMHqcuVP96WqjiLrKWBy8y8HscIgWJLOPJk3xk-C2IcyPlwApqmdMVgs3uF6wDamoQPPw7xHVAC8BmKIhAyp5lQIH3h"/>
+<div class="absolute top-space-sm left-space-sm">
+<span class="bg-surface-container-highest/90 backdrop-blur-md font-label-caps text-label-caps uppercase text-secondary px-2.5 py-1 rounded-full">
+                Exclusive Edit
+              </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-grow gap-space-md">
+<div>
+<div class="flex justify-between items-start mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface leading-snug">
+                  NAD &amp; Friends Black Crop Jacket
+                </h3>
+</div>
+<p class="font-label-caps text-label-caps uppercase text-on-surface-variant">Women / Capsule 02</p>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-lowest/40 -mx-space-md -mb-space-md p-space-md">
+<span class="font-label-data text-body-lg font-bold text-secondary">
+                KShs 25,000.00
+              </span>
+<button class="bg-secondary text-on-secondary hover:bg-secondary-fixed font-button-text text-button-text uppercase px-space-md py-space-xs rounded transition-all hover:scale-95 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">add</span>
+                Reserve
+              </button>
+</div>
+</div>
+</article>
+<!-- Product 5 -->
+<article class="product-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="jackets exclusive">
+<div class="relative aspect-[3/4] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Utilitarian sleeveless black tactical jacket modeled in high contrast lighting, highlighting upcycled deadstock leather panels and asymmetric modular cargo pockets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbtzcIAYKr6NWJ50D6fWxuv7auDO8F2XCBi_MyKMvE6npzVA07QBS5ZYAmyyAFR5bIdWHToP7tA-vHTko2fw6ZpY_Ow6vCiE8Odl3zyUWeYJfcZhmzFK9qRrgQexoMPBWQxyvgfGs8srXcFFDsI54F3fYL45OXQ1tzMUKlUNyjbTBs7ABLVdnz9xSe_XVOcFs1bWNXD_7qQtWRIcVc46K6BBCItU82CMNbl0YZ_KGM"/>
+<div class="absolute top-space-sm left-space-sm">
+<span class="bg-surface-container-highest/90 backdrop-blur-md font-label-caps text-label-caps uppercase text-tertiary px-2.5 py-1 rounded-full">
+                Modular Vest
+              </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-grow gap-space-md">
+<div>
+<div class="flex justify-between items-start mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface leading-snug">
+                  NAD &amp; Friends Black Sleeveless Jacket
+                </h3>
+</div>
+<p class="font-label-caps text-label-caps uppercase text-on-surface-variant">Unisex / All-Season</p>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-lowest/40 -mx-space-md -mb-space-md p-space-md">
+<span class="font-label-data text-body-lg font-bold text-secondary">
+                KShs 8,500.00
+              </span>
+<button class="bg-secondary text-on-secondary hover:bg-secondary-fixed font-button-text text-button-text uppercase px-space-md py-space-xs rounded transition-all hover:scale-95 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">add</span>
+                Reserve
+              </button>
+</div>
+</div>
+</article>
+<!-- Product 6 -->
+<article class="product-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="shirts exclusive">
+<div class="relative aspect-[3/4] w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Artisanal contemporary crop shirt with intricate Swahili calligraphy embroidery along the collar and hem, crafted from crisp raw textured organic cotton in midnight blue and bone white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH2WLlXaBI3CE6SKTWRokTlCAlqajkVSxjkrjYafE0bIhy2uy4ZGcUarQWkVb_nLDW6PIfg2CtWN8lZKkGY09PouhQdwXv01DMHqC38DuYBvgS7ncnkQQPevwTYB5G4oTfONFGcIxYtunWluQjsRo46G_XQ3f627NHRvGLtJRM63ONoLtoMESZy45Yh7zhCEKF6VnAjT86N5WPTBw5kV-uHCo15NytFYDKnCpftqur"/>
+<div class="absolute top-space-sm left-space-sm">
+<span class="bg-surface-container-highest/90 backdrop-blur-md font-label-caps text-label-caps uppercase text-secondary px-2.5 py-1 rounded-full">
+                Cultural Script
+              </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col justify-between flex-grow gap-space-md">
+<div>
+<div class="flex justify-between items-start mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface leading-snug">
+                  NAD Swahili Embroidered Crop Shirt
+                </h3>
+</div>
+<p class="font-label-caps text-label-caps uppercase text-on-surface-variant">Women / Tailored Heritage</p>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-lowest/40 -mx-space-md -mb-space-md p-space-md">
+<span class="font-label-data text-body-lg font-bold text-secondary">
+                KShs 7,500.00
+              </span>
+<button class="bg-secondary text-on-secondary hover:bg-secondary-fixed font-button-text text-button-text uppercase px-space-md py-space-xs rounded transition-all hover:scale-95 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">add</span>
+                Reserve
+              </button>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Editorial Split Feature Block: The Heart of Art & Upcycling -->
+<section class="relative w-full bg-surface py-space-xl lg:py-28 overflow-hidden" id="philosophy">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Left Visual Framing Plinth -->
+<div class="lg:col-span-5 relative">
+<div class="relative aspect-[4/5] rounded-xl overflow-hidden shadow-2xl bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Close-up macro craftsmanship shot of Kenyan garment artisans hand-stitching reclaimed leather patches onto raw indigo streetwear fabric in a clean, modern Nairobi workshop atelier" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRWZeITVQgm4u99hum-caeSFmgtqWXvF8O1_Fn8R7Zd0IvRhRT8bx713x182qNyXI2jwq2P_avhffGBvCtTVSdq_kqHllsNIYh2ZT8s67UcsATBYUGzqky2V9B_536IS17GmthY0OMljQY6rCuTOz0GBfaZogK5Uw62kzyXhlnx1dIK7hi60ARUZSB8fwPHZ1q394hb4QOHbKrwzTBNIJu80eq0yoXomhssbG88ona"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent"></div>
+<!-- Frosted Technical Overlay Chip matching Dyslove Inspiration -->
+<div class="absolute bottom-space-md left-space-md right-space-md bg-primary-container/40 backdrop-blur-xl p-space-md rounded-lg">
+<div class="flex justify-between items-center mb-space-xs">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Royal Blue</span>
+<span class="font-label-data text-label-data text-secondary">#191970</span>
+</div>
+<div class="flex items-center justify-between font-label-caps text-[10px] text-tertiary uppercase tracking-wider">
+<span>CIRCULAR SYSTEM V.2</span>
+<span>NAIROBI ATELIER</span>
+</div>
+</div>
+</div>
+<!-- Asymmetric Accent Plinth -->
+<div class="hidden sm:block absolute -bottom-6 -right-6 bg-secondary text-on-secondary p-space-md rounded-lg shadow-xl max-w-xs">
+<p class="font-label-caps text-label-caps uppercase tracking-wider font-bold mb-1">
+              ZERO DEADSTOCK DISCARD
+            </p>
+<p class="font-body-md text-[13px] leading-tight text-on-secondary">
+              100% of scrap leather and vintage military surplus repurposed into functional capsule garments.
+            </p>
+</div>
+</div>
+<!-- Right Content Block -->
+<div class="lg:col-span-7 lg:pl-space-lg space-y-space-lg">
+<div>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-secondary block mb-space-xs">
+              02 / THE MANIFESTO
+            </span>
+<h2 class="font-headline-xl text-headline-lg lg:text-headline-xl uppercase text-on-surface tracking-tight leading-none mb-space-md">
+              The Heart of Art &amp; Upcycling.
+            </h2>
+<p class="font-body-xl text-body-lg lg:text-body-xl text-on-surface-variant leading-relaxed">
+              Nairobi Apparel District is a Kenyan streetwear house built to challenge disposable hyper-consumerism. We intercept discarded textiles, post-consumer leathers, and military surplus—transforming them into collectible, customer-tailored armor for the modern metropolis.
+            </p>
+</div>
+<!-- 3 Minimalist Value Pillars Bento Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-xs">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-secondary mb-space-sm">
+<span class="material-symbols-outlined text-[18px]">recycling</span>
+</div>
+<h3 class="font-headline-sm text-[18px] uppercase text-on-surface">Upcycled Materials</h3>
+<p class="font-body-md text-on-surface-variant text-[13px] leading-relaxed">
+                Repurposing local vintage leather, military canvas, and organic off-cuts into structured streetwear.
+              </p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-xs">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-tertiary mb-space-sm">
+<span class="material-symbols-outlined text-[18px]">cut</span>
+</div>
+<h3 class="font-headline-sm text-[18px] uppercase text-on-surface">Artisan Tailored</h3>
+<p class="font-body-md text-on-surface-variant text-[13px] leading-relaxed">
+                Hand-cut and precision assembled by master tailors in Nairobi with numbered run certifications.
+              </p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-xs">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-secondary mb-space-sm">
+<span class="material-symbols-outlined text-[18px]">all_inclusive</span>
+</div>
+<h3 class="font-headline-sm text-[18px] uppercase text-on-surface">Zero Waste Mindset</h3>
+<p class="font-body-md text-on-surface-variant text-[13px] leading-relaxed">
+                Designed to age gracefully with lifelong repair protocols, actively combatting fast-fashion landfill dumps.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter & Brand Benefits Strip -->
+<section class="w-full bg-surface-container-high py-space-xl">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin space-y-space-xl">
+<!-- Minimalist Newsletter Box -->
+<div class="bg-primary-container/30 backdrop-blur-2xl p-space-lg lg:p-space-xl rounded-2xl relative overflow-hidden shadow-xl">
+<div class="pointer-events-none absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-secondary/10 blur-[100px]"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center relative z-10">
+<div class="lg:col-span-7 space-y-space-xs">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-secondary block">
+              ATELIER INSIDER ACCESS
+            </span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface leading-tight">
+              Subscribe and receive 10% off your next purchase.
+            </h2>
+<p class="font-body-md text-on-surface-variant max-w-lg">
+              Receive secret archive invitations, drop coordinates, and custom fitting reservations before global releases.
+            </p>
+</div>
+<div class="lg:col-span-5">
+<form class="flex flex-col sm:flex-row gap-space-xs" id="newsletter-form">
+<input class="flex-1 bg-surface-container-lowest/80 text-on-surface placeholder:text-outline font-label-caps text-label-caps px-space-md py-space-sm rounded focus:outline-none focus:ring-1 focus:ring-secondary transition-all" id="newsletter-email" placeholder="YOUR EMAIL PROTOCOL" required="" type="email"/>
+<button class="bg-secondary hover:bg-secondary-fixed text-on-secondary font-button-text text-button-text uppercase px-space-lg py-space-sm rounded transition-all hover:scale-[0.98] shadow-sm whitespace-nowrap" type="submit">
+                Join District
+              </button>
+</form>
+<div class="hidden font-label-data text-label-data text-secondary mt-space-xs" id="newsletter-msg">
+              ✓ Address logged into Atelier protocol. Check your signal.
+            </div>
+</div>
+</div>
+</div>
+<!-- Minimalist Benefits Strip -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter pt-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<div>
+<h4 class="font-button-text text-button-text uppercase text-on-surface">Free Delivery</h4>
+<p class="font-label-data text-[11px] text-on-surface-variant">Orders over $100 worldwide</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+<div>
+<h4 class="font-button-text text-button-text uppercase text-on-surface">7 Month Warranty</h4>
+<p class="font-label-data text-[11px] text-on-surface-variant">Complimentary seam repairs</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">track_changes</span>
+</div>
+<div>
+<h4 class="font-button-text text-button-text uppercase text-on-surface">Worldwide Tracked</h4>
+<p class="font-label-data text-[11px] text-on-surface-variant">DHL Express priority logistics</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">assignment_return</span>
+</div>
+<div>
+<h4 class="font-button-text text-button-text uppercase text-on-surface">Effortless Exchange</h4>
+<p class="font-label-data text-[11px] text-on-surface-variant">14-day archival exchange</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Dynamic Product Filter Interaction
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        // Update button states
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-secondary', 'text-on-secondary');
+          b.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        });
+        btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+        btn.classList.add('bg-secondary', 'text-on-secondary');
+
+        // Filter products with smooth opacity transition
+        productCards.forEach(card => {
+          const categories = card.getAttribute('data-category') || '';
+          if (filter === 'all' || categories.includes(filter)) {
+            card.style.display = 'flex';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 10);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(8px)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 200);
+          }
+        });
+      });
+    });
+
+    // Newsletter Submission micro-interaction
+    const form = document.getElementById('newsletter-form');
+    const msg = document.getElementById('newsletter-msg');
+    const input = document.getElementById('newsletter-email');
+
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (input.value) {
+          msg.classList.remove('hidden');
+          input.value = '';
+          setTimeout(() => {
+            msg.classList.add('hidden');
+          }, 4500);
+        }
+      });
+    }
+  });
+</script></main><footer class="w-full bg-surface-container-lowest text-on-surface"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-space-xl"><div class="md:col-span-5 flex flex-col justify-between"><div class="space-y-space-md"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-label-caps text-label-caps uppercase text-secondary tracking-widest">Nairobi Apparel District</span></div><p class="font-headline-md text-headline-md text-on-surface">Built to outlive trends · Heart of Art &amp; Upcycling.</p><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Pan-African contemporary luxury streetwear forged from Nairobi's creative underground. Raw metropolitan energy, archival precision, and conscious circularity.</p></div><div class="mt-space-lg flex items-center gap-space-md font-label-data text-label-data text-on-surface-variant"><span>-1.2921° S, 36.8219° E</span><span>·</span><span>STUDIO V.01</span></div></div><div class="md:col-span-3 flex flex-col space-y-space-md"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Index</span><ul class="space-y-space-sm font-button-text text-button-text uppercase tracking-widest text-on-surface-variant"><li class="flex items-center gap-space-xs"><a class="hover:text-secondary transition-colors" data-path="collection" href="#">Capsule Releases</a></li><li class="flex items-center gap-space-xs"><a class="hover:text-secondary transition-colors" data-path="men" href="#">Men's Division</a></li><li class="flex items-center gap-space-xs"><a class="hover:text-secondary transition-colors" data-path="women" href="#">Women's Division</a></li><li class="flex items-center gap-space-xs"><a class="hover:text-secondary transition-colors" data-path="exclusive" href="#">Archival Drops</a></li><li class="flex items-center gap-space-xs"><a class="hover:text-secondary transition-colors" data-path="story" href="#">Art &amp; Upcycle Manifesto</a></li></ul></div><div class="md:col-span-4 flex flex-col justify-between space-y-space-md"><div class="bg-primary-container/40 p-space-md rounded-xl backdrop-blur-xl"><span class="font-label-caps text-label-caps uppercase text-tertiary tracking-widest block mb-space-xs">Priority Access</span><p class="font-body-md text-body-md text-on-surface mb-space-md">Subscribe to capsule reservations and secret atelier drops.</p><form class="flex flex-col gap-space-sm"><input class="bg-surface-container-high px-space-md py-space-sm font-label-caps text-label-caps text-on-surface placeholder:text-outline focus:outline-none rounded" placeholder="ENTER YOUR EMAIL" type="email"/><button class="bg-secondary text-on-secondary font-button-text text-button-text uppercase px-space-md py-space-sm rounded transition-all hover:bg-secondary-fixed" type="button">Confirm Reservation</button></form></div><div><span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-widest block mb-space-sm">Signal Channels</span><div class="flex items-center gap-space-md font-label-caps text-label-caps uppercase text-on-surface-variant"><a class="hover:text-secondary transition-colors" href="#">Instagram</a><a class="hover:text-secondary transition-colors" href="#">Editorial</a><a class="hover:text-secondary transition-colors" href="#">Sound</a><a class="hover:text-secondary transition-colors" href="#">Radio</a></div></div></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-data text-label-data text-outline"><p>© 2025 Nairobi Apparel District. All Rights Reserved.</p><div class="flex items-center gap-space-md"><span>Privacy Protocol</span><span>Terms of Atelier</span><span>Secure KSh Checkout</span></div></div></div></footer></body></html>
