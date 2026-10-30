@@ -170,6 +170,8 @@ export const ShopView: React.FC<ShopViewProps> = ({
                   delay={(idx % 4) * 0.05}
                   containerClassName="w-full h-full"
                   className="transition-transform duration-700 ease-out group-hover/media:scale-105"
+                  priority={idx < 2}
+                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
                 />
 
                 {/* Corner Crosshairs */}
