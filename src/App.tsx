@@ -16,6 +16,7 @@ import { HomeView } from './views/HomeView';
 import { AboutView } from './views/AboutView';
 import { ShopView } from './views/ShopView';
 import { CollectionView } from './views/CollectionView';
+import { ModelDetailView } from './views/ModelDetailView';
 import { ContactView } from './views/ContactView';
 import { ProductDetailView } from './views/ProductDetailView';
 import { CartView } from './views/CartView';
@@ -30,6 +31,7 @@ type ViewMode =
   | 'about'
   | 'shop'
   | 'collection'
+  | 'model'
   | 'contact'
   | 'product'
   | 'cart'
@@ -40,6 +42,7 @@ export default function App() {
   const [activeView, setActiveView] = useState<ViewMode>('home');
   const [activeShopCategory, setActiveShopCategory] = useState<string>('all');
   const [selectedProductId, setSelectedProductId] = useState<string>('monogram-military-jacket');
+  const [selectedModelSlug, setSelectedModelSlug] = useState<string>('model-8');
 
   // Slide-over cart drawer & modals
   const [isCartDrawerOpen, setIsCartDrawerOpen] = useState(false);
@@ -132,16 +135,41 @@ export default function App() {
     syncBackendCart();
   }, [cartItems, deviceId]);
 
-  // Handle URL hash routing and /admin
+  // Handle URL hash routing, direct page URLs and /admin
   useEffect(() => {
     const handleHashChange = () => {
       const pathname = window.location.pathname;
+
       if (pathname.includes('/admin')) {
         setActiveView('admin');
         return;
       }
 
+      // Check pathname direct routes (e.g. /collections/model-8 or /portfolio-item/model-8)
+      if (pathname.includes('/collections/') || pathname.includes('/portfolio-item/')) {
+        const parts = pathname.split('/');
+        const slug = parts[parts.length - 1] || parts[parts.length - 2];
+        if (slug) {
+          setSelectedModelSlug(slug);
+          setActiveView('model');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+      }
+
       const hash = window.location.hash.replace('#', '');
+
+      // Check model route in hash
+      if (hash.startsWith('collections/') || hash.startsWith('model-') || hash.startsWith('portfolio-item/')) {
+        let slug = hash.replace('collections/', '').replace('portfolio-item/', '');
+        if (slug) {
+          setSelectedModelSlug(slug);
+          setActiveView('model');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+      }
+
       if (hash.startsWith('product-')) {
         const pId = hash.replace('product-', '');
         const found = PRODUCTS.find((p) => p.id === pId);
@@ -171,6 +199,7 @@ export default function App() {
           setActiveShopCategory('all');
           break;
         case 'collection':
+        case 'collections':
         case 'lookbook':
           setActiveView('collection');
           break;
@@ -212,6 +241,13 @@ export default function App() {
       setActiveShopCategory(subParam);
       setActiveView('shop');
       window.location.hash = `shop/${subParam}`;
+    } else if (view === 'model' && subParam) {
+      setSelectedModelSlug(subParam);
+      setActiveView('model');
+      window.location.hash = `collections/${subParam}`;
+    } else if (view === 'collection' || view === 'collections') {
+      setActiveView('collection');
+      window.location.hash = 'collection';
     } else {
       setActiveView(view as ViewMode);
       window.location.hash = view;
@@ -280,7 +316,7 @@ export default function App() {
 
         {/* Boxed Red Header Navigation */}
         <Navbar
-          activeView={activeView}
+          activeView={activeView === 'model' ? 'collection' : activeView}
           onNavigate={navigateTo}
           cartCount={totalCartCount}
           onOpenCartDrawer={() => setIsCartDrawerOpen(true)}
@@ -290,7 +326,13 @@ export default function App() {
         <main className="flex-1 overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
-              key={activeView === 'product' ? `product-${selectedProductId}` : activeView}
+              key={
+                activeView === 'product'
+                  ? `product-${selectedProductId}`
+                  : activeView === 'model'
+                  ? `model-${selectedModelSlug}`
+                  : activeView
+              }
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -316,8 +358,16 @@ export default function App() {
 
               {activeView === 'collection' && (
                 <CollectionView
-                  onSelectProduct={(id) => navigateTo('product', id)}
+                  onSelectModel={(slug) => navigateTo('model', slug)}
                   onNavigate={navigateTo}
+                />
+              )}
+
+              {activeView === 'model' && (
+                <ModelDetailView
+                  modelSlug={selectedModelSlug}
+                  onNavigateToModel={(slug) => navigateTo('model', slug)}
+                  onBackToCollections={() => navigateTo('collection')}
                 />
               )}
 
