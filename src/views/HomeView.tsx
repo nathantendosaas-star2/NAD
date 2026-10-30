@@ -355,6 +355,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   alt={cat.label}
                   direction="up"
                   containerClassName="w-full h-full"
+                  sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
                 />
               </div>
               <div className="flex flex-col justify-end flex-1">
