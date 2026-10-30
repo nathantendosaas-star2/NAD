@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { getResponsiveImageProps } from '../utils/responsiveImage';
 
 interface ImageRevealProps {
   src: string;
@@ -8,6 +9,10 @@ interface ImageRevealProps {
   containerClassName?: string;
   delay?: number;
   direction?: 'up' | 'down' | 'left' | 'right';
+  /** Load above-the-fold imagery immediately and give it high network priority. */
+  priority?: boolean;
+  /** Approximate rendered width, used by the browser to choose a responsive source. */
+  sizes?: string;
 }
 
 export function ImageReveal({
@@ -16,19 +21,27 @@ export function ImageReveal({
   className = '',
   containerClassName = '',
   delay = 0,
-  direction = 'up'
+  direction = 'up',
+  priority = false,
+  sizes = '(min-width: 1024px) 50vw, 100vw',
 }: ImageRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [imageFailed, setImageFailed] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    setImageFailed(false);
+    setImageLoaded(false);
+  }, [src]);
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"]
+    offset: ['start end', 'end start']
   });
 
-  // Parallax effect for the image inside the mask.
-  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ['-10%', '10%']);
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.1, 1, 1.1]);
+  const responsive = src ? getResponsiveImageProps(src, sizes) : null;
 
   const variants = {
     hidden: {
@@ -42,7 +55,7 @@ export function ImageReveal({
       clipPath: 'inset(0% 0% 0% 0%)',
       opacity: 1,
       transition: {
-        duration: 1.2,
+        duration: 0.8,
         ease: [0.22, 1, 0.36, 1],
         delay,
       }
@@ -53,14 +66,13 @@ export function ImageReveal({
     <div
       ref={ref}
       className={`relative overflow-hidden ${containerClassName}`}
-      style={{ willChange: 'clip-path' }}
     >
       <motion.div
         variants={variants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-10%" }}
-        className="w-full h-full"
+        viewport={{ once: true, margin: '-10%' }}
+        className="relative w-full h-full"
       >
         {imageFailed || !src ? (
           <div
@@ -77,16 +89,28 @@ export function ImageReveal({
             </span>
           </div>
         ) : (
-          <motion.img
-            src={src}
-            alt={alt}
-            loading="lazy"
-            decoding="async"
-            referrerPolicy="no-referrer"
-            onError={() => setImageFailed(true)}
-            style={{ y, scale }}
-            className={`w-full h-full transition-transform duration-700 ease-out ${className.includes('object-') ? '' : 'object-cover'} ${className}`}
-          />
+          <>
+            {!imageLoaded && (
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 z-10 bg-[linear-gradient(110deg,#e9e3da_8%,#f8f4ed_18%,#e9e3da_33%)] bg-[length:200%_100%] animate-pulse"
+              />
+            )}
+            <motion.img
+              src={responsive!.src}
+              srcSet={responsive!.srcSet}
+              sizes={responsive!.sizes}
+              alt={alt}
+              loading={priority ? 'eager' : 'lazy'}
+              fetchPriority={priority ? 'high' : 'auto'}
+              decoding="async"
+              referrerPolicy="no-referrer"
+              onLoad={() => setImageLoaded(true)}
+              onError={() => setImageFailed(true)}
+              style={{ y, scale }}
+              className={`w-full h-full transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'} ${className.includes('object-') ? '' : 'object-cover'} ${className}`}
+            />
+          </>
         )}
       </motion.div>
     </div>
