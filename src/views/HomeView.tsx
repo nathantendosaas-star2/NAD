@@ -110,12 +110,12 @@ export const HomeView: React.FC<HomeViewProps> = ({
   };
 
   const categories = [
-    { id: 'men', label: 'MEN', count: 'Tailored Shirts & Outerwear', img: 'https://nairobiappareldistrict.com/wp-content/uploads/2025/11/charis-ex-819x1024.jpg' },
-    { id: 'women', label: 'WOMEN', count: 'Kimono Silhouettes & Bodices', img: 'https://nairobiappareldistrict.com/wp-content/uploads/2025/10/PTT2-819x1024.jpg' },
-    { id: 'exclusive', label: 'EXCLUSIVE', count: 'One-of-One Atelier Drops', img: 'https://nairobiappareldistrict.com/wp-content/uploads/2025/11/ex-2-819x1024.jpg' },
-    { id: 'unisex', label: 'UNISEX', count: 'Raw Selvedge Denim Cargos', img: 'https://nairobiappareldistrict.com/wp-content/uploads/2025/11/unisex-819x1024.jpg' },
-    { id: 'accessories', label: 'ACCESSORIES', count: 'Canvas Totes & Distressed Hats', img: 'https://nairobiappareldistrict.com/wp-content/uploads/2026/08/fela-tote-762x1024.jpg' },
-    { id: 'uncategorized', label: 'UNCATEGORIZED', count: 'Studio Experimental Archives', img: 'https://nairobiappareldistrict.com/wp-content/uploads/2025/11/vest-front-762x1024.jpg' },
+    { id: 'men', label: 'MEN', count: 'Tailored Shirts & Outerwear', img: 'https://images.unsplash.com/photo-1567934859879-9addfb1e07f8?auto=format&fit=crop&q=85&w=1200' },
+    { id: 'women', label: 'WOMEN', count: 'Kimono Silhouettes & Bodices', img: 'https://images.unsplash.com/photo-1547069687-b01db9659136?auto=format&fit=crop&q=85&w=1200' },
+    { id: 'exclusive', label: 'EXCLUSIVE', count: 'One-of-One Atelier Drops', img: 'https://images.unsplash.com/photo-1580644228275-2b826dbec5bf?auto=format&fit=crop&q=85&w=1200' },
+    { id: 'unisex', label: 'UNISEX', count: 'Raw Selvedge Denim Cargos', img: 'https://images.unsplash.com/photo-1580644228275-2b826dbec5bf?auto=format&fit=crop&q=85&w=1200' },
+    { id: 'accessories', label: 'ACCESSORIES', count: 'Canvas Totes & Distressed Hats', img: 'https://images.unsplash.com/photo-1772890753143-24991d807710?auto=format&fit=crop&q=85&w=1200' },
+    { id: 'uncategorized', label: 'UNCATEGORIZED', count: 'Studio Experimental Archives', img: 'https://images.unsplash.com/photo-1580644228275-2b826dbec5bf?auto=format&fit=crop&q=85&w=1200' },
   ];
 
   return (
@@ -132,7 +132,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           {/* Layer 1: Atmospheric full-bleed photography with soft warm gradient scrim */}
           <div className="parallax-layer z-0" data-depth="-0.35">
             <ImageReveal
-              src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&q=80&w=2000"
+              src="https://images.unsplash.com/photo-1567934859879-9addfb1e07f8?auto=format&fit=crop&q=85&w=2000"
               alt="NAD Model in art-cycled pieces"
               containerClassName="w-full h-full"
               className="brightness-90 contrast-105"
