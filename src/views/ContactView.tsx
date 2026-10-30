@@ -96,7 +96,7 @@ export const ContactView: React.FC = () => {
                   type="tel"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  placeholder="+254 700 000 000"
+                  placeholder="+254 794 417210"
                   className="w-full bg-[#FAF7F2] text-[#141414] border border-[#DCD5C9] p-3 text-sm rounded-xl focus:outline-none focus:border-[#C9473B]"
                 />
               </div>
@@ -154,7 +154,7 @@ export const ContactView: React.FC = () => {
               </a>
 
               <a
-                href="https://wa.me/254700000000"
+                href="https://wa.me/254794417210"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-3 p-4 bg-[#FAF7F2] border border-[#DCD5C9] hover:border-[#C9473B] transition-colors rounded-2xl group shadow-xs"
@@ -165,7 +165,7 @@ export const ContactView: React.FC = () => {
                     Concierge Line
                   </span>
                   <strong className="text-sm text-[#141414] group-hover:text-[#C9473B] transition-colors">
-                    +254 700 000 000
+                    +254 794 417210
                   </strong>
                 </div>
               </a>
