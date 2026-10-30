@@ -54,6 +54,8 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
                 direction="up"
                 containerClassName="w-full h-full"
                 className="object-contain p-4"
+                priority
+                sizes="(min-width: 1024px) 55vw, 100vw"
               />
             </div>
 
