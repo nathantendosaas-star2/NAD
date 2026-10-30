@@ -70,10 +70,11 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
                         : 'border-[#DCD5C9] opacity-70 hover:opacity-100 hover:border-[#C9473B]'
                     }`}
                   >
-                    <img
+                    <ImageWithFallback
                       src={img}
-                      alt=""
+                      alt={product.name}
                       className="w-full h-full object-cover"
+                      wrapperClassName="w-full h-full"
                     />
                   </button>
                 ))}
