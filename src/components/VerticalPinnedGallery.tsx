@@ -89,6 +89,7 @@ export const VerticalPinnedGallery: React.FC<VerticalPinnedGalleryProps> = ({
                         alt={product.name}
                         direction={isEven ? 'left' : 'right'}
                         containerClassName="w-full h-full"
+                        sizes="(min-width: 768px) 50vw, 100vw"
                       />
                     </div>
                   </motion.div>
