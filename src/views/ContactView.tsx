@@ -199,6 +199,26 @@ export const ContactView: React.FC = () => {
             <p className="text-xs text-[#5E5950] leading-relaxed">
               Studio 18, Wood Avenue, Kilimani, Nairobi, Kenya. Our team is available on site Tuesday through Saturday.
             </p>
+            <button
+              type="button"
+              onClick={() => {
+                const address = 'Studio 18, Wood Avenue, Kilimani, Nairobi, Kenya';
+                const isAppleDevice =
+                  /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+                  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+                const mapsUrl = isAppleDevice
+                  ? `https://maps.apple.com/?q=${encodeURIComponent(address)}`
+                  : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+
+                if (window.confirm('Would you like to open the location in Maps?')) {
+                  window.open(mapsUrl, '_blank', 'noopener,noreferrer');
+                }
+              }}
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#C9473B] px-5 py-3 text-[10px] font-bold uppercase tracking-[0.18em] text-white transition-colors hover:bg-[#b03c31] focus:outline-none focus:ring-2 focus:ring-[#C9473B] focus:ring-offset-2"
+            >
+              <MapPin className="h-3.5 w-3.5" />
+              Get Directions
+            </button>
           </div>
         </div>
       </div>
