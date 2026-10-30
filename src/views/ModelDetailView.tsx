@@ -117,7 +117,7 @@ export const ModelDetailView: React.FC<ModelDetailViewProps> = ({
               <span className="font-mono text-xs uppercase tracking-widest text-[#C9473B] block mb-2 font-bold">
                 + PORTFOLIO ENTRY
               </span>
-              <h1 className="font-serif-heavy text-3xl sm:text-5xl uppercase text-[#141414] leading-tight tracking-tight">
+              <h1 className="font-serif-heavy text-[clamp(1.75rem,3.2vw,2.75rem)] uppercase text-[#141414] leading-[1.05] tracking-tight break-words [overflow-wrap:anywhere] max-w-full">
                 {currentModel.title}
               </h1>
             </div>
