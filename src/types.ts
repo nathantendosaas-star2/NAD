@@ -24,7 +24,7 @@ export interface Product {
   currency: string;
   category: ProductCategory;
   categoryLabel: string;
-  tag?: 'New' | 'Limited' | 'Exclusive';
+  tag?: string;
   inStock: boolean;
   stockCount: number;
   images: string[];
@@ -47,7 +47,7 @@ export interface CartItem {
 }
 
 export interface ShippingMethod {
-  id: 'economy' | 'express';
+  id: 'standard' | 'economy' | 'express';
   name: string;
   estimatedDays: string;
   price: number;
