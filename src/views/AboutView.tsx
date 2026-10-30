@@ -27,7 +27,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
       {/* Hero Visual Imagery */}
       <div className="max-w-5xl mx-auto aspect-16/9 overflow-hidden border border-[#DCD5C9] mb-20 relative bg-[#FFFFFF] rounded-3xl shadow-md">
         <ImageReveal
-          src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&q=80&w=2000"
+          src="https://images.unsplash.com/photo-1567934859879-9addfb1e07f8?auto=format&fit=crop&q=85&w=2000"
           alt="Studio 18 Kilimani Atelier"
           direction="up"
           containerClassName="w-full h-full"
