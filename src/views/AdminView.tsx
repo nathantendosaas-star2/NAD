@@ -92,7 +92,7 @@ export const AdminView: React.FC = () => {
     categoryLabel: 'EXCLUSIVE · UNISEX',
     price: 15000,
     stockCount: 10,
-    images: ['https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&q=80&w=1200'],
+    images: ['https://images.unsplash.com/photo-1567934859879-9addfb1e07f8?auto=format&fit=crop&q=85&w=1200'],
     description: 'Art-cycled tailored garment crafted at Studio 18, Kilimani.',
   });
 
@@ -208,7 +208,7 @@ export const AdminView: React.FC = () => {
           categoryLabel: 'EXCLUSIVE · UNISEX',
           price: 15000,
           stockCount: 10,
-          images: ['https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&q=80&w=1200'],
+          images: ['https://images.unsplash.com/photo-1567934859879-9addfb1e07f8?auto=format&fit=crop&q=85&w=1200'],
           description: 'Art-cycled tailored garment crafted at Studio 18, Kilimani.',
         });
         fetchInventory();
