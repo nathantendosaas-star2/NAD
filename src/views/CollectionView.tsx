@@ -252,20 +252,20 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
   });
 
   return (
-    <div className="pt-20 bg-[#121317] text-[#e3e2e8] min-h-screen selection:bg-[#c0c1ff] selection:text-[#191970]">
+    <div className="pt-24 sm:pt-28 pb-28 bg-[#EFEBE3] text-[#141414] min-h-screen">
       {/* ========================================================================= */}
-      {/* SECTION 1: MINIMAL AMBIENT HERO SECTION (Attached New Design)            */}
+      {/* SECTION 1: MINIMAL AMBIENT HERO SECTION                                   */}
       {/* ========================================================================= */}
-      <section className="relative w-full overflow-hidden bg-[#121317] py-12 lg:py-24 border-b border-[#343439]/60">
+      <section className="relative w-full overflow-hidden bg-[#EFEBE3] py-12 lg:py-24 border-b border-[#DCD5C9]">
         {/* Atmospheric Ambient Glows */}
-        <div className="pointer-events-none absolute -top-32 -left-20 h-96 w-96 rounded-full bg-[#191970]/40 blur-[130px]" />
-        <div className="pointer-events-none absolute top-1/4 -right-20 h-80 w-80 rounded-full bg-[#b9d070]/10 blur-[120px]" />
+        <div className="pointer-events-none absolute -top-32 -left-20 h-96 w-96 rounded-full bg-[#C9473B]/10 blur-[130px]" />
+        <div className="pointer-events-none absolute top-1/4 -right-20 h-80 w-80 rounded-full bg-[#F7C2E8]/20 blur-[120px]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-12">
           {/* Minimalist Ticker Pill */}
-          <div className="inline-flex items-center gap-2 bg-[#292a2e]/60 backdrop-blur-xl px-4 py-1.5 rounded-full mb-6 border border-[#464651]/40 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-[#b9d070] animate-pulse" />
-            <span className="font-mono text-[10px] sm:text-xs uppercase text-[#accae8] tracking-widest font-bold">
+          <div className="inline-flex items-center gap-2 bg-[#FFFFFF]/90 backdrop-blur-xl px-4 py-1.5 rounded-full mb-6 border border-[#DCD5C9] shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-[#C9473B] animate-pulse" />
+            <span className="font-mono text-[10px] sm:text-xs uppercase text-[#C9473B] tracking-widest font-bold">
               Worldwide Shipping · Sustainable Handcrafted Fashion
             </span>
           </div>
@@ -273,39 +273,39 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
           {/* Hero Typography & Editorial Stance */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
             <div className="lg:col-span-8 space-y-4">
-              <span className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-[#b9d070] block">
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-[#C9473B] block">
                 [ ARCHIVAL REVISION 2025 ]
               </span>
-              <h1 className="font-serif-heavy text-4xl sm:text-6xl lg:text-7xl uppercase text-white tracking-tighter leading-none">
+              <h1 className="font-serif-heavy text-4xl sm:text-6xl lg:text-7xl uppercase text-[#141414] tracking-tighter leading-none">
                 NOT ANOTHER<br />
-                <span className="text-[#accae8]">DISPOSABLE.</span>
+                <span className="text-[#C9473B]">DISPOSABLE.</span>
               </h1>
-              <p className="font-satoshi text-sm sm:text-base md:text-lg text-[#c7c5d3] max-w-xl font-normal leading-relaxed pt-2">
+              <p className="font-satoshi text-sm sm:text-base md:text-lg text-[#5E5950] max-w-xl font-normal leading-relaxed pt-2">
                 Art-cycled Kenyan streetwear. Built to outlive trends through conscious tailoring, upcycled military canvas, and refined metropolitan utility.
               </p>
             </div>
 
             {/* Technical Spec Pill & CTA Trigger */}
             <div className="lg:col-span-4 flex flex-col gap-4 lg:items-end">
-              <div className="w-full sm:w-80 bg-[#191970]/30 backdrop-blur-2xl p-5 rounded-2xl border border-[#464651]/50 shadow-xl relative overflow-hidden">
-                <div className="flex items-center justify-between mb-3 border-b border-[#464651]/40 pb-2">
-                  <span className="font-serif-heavy text-lg text-white uppercase">Edition 04</span>
-                  <span className="font-mono text-[9px] uppercase bg-[#b9d070]/20 text-[#b9d070] px-2.5 py-0.5 rounded-full font-bold">
+              <div className="w-full sm:w-80 bg-[#FFFFFF] p-5 rounded-2xl border border-[#DCD5C9] shadow-sm relative overflow-hidden">
+                <div className="flex items-center justify-between mb-3 border-b border-[#DCD5C9] pb-2">
+                  <span className="font-serif-heavy text-lg text-[#141414] uppercase">Edition 04</span>
+                  <span className="font-mono text-[9px] uppercase bg-[#C9473B]/10 text-[#C9473B] px-2.5 py-0.5 rounded-full font-bold">
                     RAW RUN
                   </span>
                 </div>
-                <div className="grid grid-cols-3 gap-2 font-mono text-[10px] text-[#c7c5d3]">
+                <div className="grid grid-cols-3 gap-2 font-mono text-[10px] text-[#5E5950]">
                   <div>
-                    <span className="block text-[#918f9d] text-[9px]">CMYK</span>
-                    <span className="font-bold text-white">27, 14, 0, 14</span>
+                    <span className="block text-[#6E685E] text-[9px]">CMYK</span>
+                    <span className="font-bold text-[#141414]">27, 14, 0, 14</span>
                   </div>
                   <div>
-                    <span className="block text-[#918f9d] text-[9px]">RGB</span>
-                    <span className="font-bold text-white">160, 189, 219</span>
+                    <span className="block text-[#6E685E] text-[9px]">RGB</span>
+                    <span className="font-bold text-[#141414]">160, 189, 219</span>
                   </div>
                   <div>
-                    <span className="block text-[#918f9d] text-[9px]">HEX</span>
-                    <span className="font-bold text-[#accae8]">#A0BDDB</span>
+                    <span className="block text-[#6E685E] text-[9px]">HEX</span>
+                    <span className="font-bold text-[#C9473B]">#A0BDDB</span>
                   </div>
                 </div>
               </div>
@@ -313,13 +313,13 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
               <div className="flex items-center gap-3 w-full sm:w-auto">
                 <a
                   href="#curated-matrix"
-                  className="flex-1 sm:flex-none text-center bg-[#b9d070] hover:bg-[#d4ed89] text-[#293500] font-mono text-xs font-bold uppercase tracking-widest px-6 py-3.5 rounded-full transition-all hover:scale-[0.98] shadow-md"
+                  className="flex-1 sm:flex-none text-center bg-[#C9473B] hover:bg-[#b03c31] text-white font-mono text-xs font-bold uppercase tracking-widest px-6 py-3.5 rounded-full transition-all shadow-md"
                 >
                   Shop Matrix
                 </a>
                 <a
                   href="#editorial-runway"
-                  className="flex-1 sm:flex-none text-center bg-[#292a2e] hover:bg-[#343439] text-white font-mono text-xs font-bold uppercase tracking-widest px-5 py-3.5 rounded-full transition-all border border-[#464651]/50"
+                  className="flex-1 sm:flex-none text-center bg-[#FFFFFF] border border-[#DCD5C9] hover:border-[#C9473B] hover:text-[#C9473B] text-[#141414] font-mono text-xs font-bold uppercase tracking-widest px-5 py-3.5 rounded-full transition-all shadow-xs"
                 >
                   Runway
                 </a>
@@ -332,15 +332,15 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
       {/* ========================================================================= */}
       {/* SECTION 2: CURATED GARMENT MATRIX & FILTER PILLS                         */}
       {/* ========================================================================= */}
-      <section className="w-full bg-[#0d0e12] py-16 sm:py-24 border-b border-[#343439]/60" id="curated-matrix">
+      <section className="w-full bg-[#FAF7F2] py-16 sm:py-24 border-b border-[#DCD5C9]" id="curated-matrix">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-12">
           {/* Section Header & Filter Controls */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <span className="font-mono text-xs uppercase tracking-widest text-[#b9d070] block mb-1 font-bold">
+              <span className="font-mono text-xs uppercase tracking-widest text-[#C9473B] block mb-1 font-bold">
                 01 / CATALOGUE RELEASE
               </span>
-              <h2 className="font-serif-heavy text-2xl sm:text-4xl uppercase text-white">
+              <h2 className="font-serif-heavy text-2xl sm:text-4xl uppercase text-[#141414]">
                 Curated Garment Matrix
               </h2>
             </div>
@@ -351,8 +351,8 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
                 onClick={() => setActiveFilter('all')}
                 className={`font-mono text-xs uppercase px-4 py-2 rounded-full transition-all font-bold ${
                   activeFilter === 'all'
-                    ? 'bg-[#b9d070] text-[#293500] shadow-md'
-                    : 'bg-[#292a2e] text-[#c7c5d3] hover:text-white border border-[#464651]/40'
+                    ? 'bg-[#C9473B] text-white shadow-md border border-[#C9473B]'
+                    : 'bg-[#FFFFFF] border border-[#DCD5C9] text-[#141414] hover:text-[#C9473B] hover:border-[#C9473B]'
                 }`}
               >
                 All Works
@@ -361,8 +361,8 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
                 onClick={() => setActiveFilter('exclusive')}
                 className={`font-mono text-xs uppercase px-4 py-2 rounded-full transition-all font-bold ${
                   activeFilter === 'exclusive'
-                    ? 'bg-[#b9d070] text-[#293500] shadow-md'
-                    : 'bg-[#292a2e] text-[#c7c5d3] hover:text-white border border-[#464651]/40'
+                    ? 'bg-[#C9473B] text-white shadow-md border border-[#C9473B]'
+                    : 'bg-[#FFFFFF] border border-[#DCD5C9] text-[#141414] hover:text-[#C9473B] hover:border-[#C9473B]'
                 }`}
               >
                 Exclusive
@@ -371,8 +371,8 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
                 onClick={() => setActiveFilter('jackets')}
                 className={`font-mono text-xs uppercase px-4 py-2 rounded-full transition-all font-bold ${
                   activeFilter === 'jackets'
-                    ? 'bg-[#b9d070] text-[#293500] shadow-md'
-                    : 'bg-[#292a2e] text-[#c7c5d3] hover:text-white border border-[#464651]/40'
+                    ? 'bg-[#C9473B] text-white shadow-md border border-[#C9473B]'
+                    : 'bg-[#FFFFFF] border border-[#DCD5C9] text-[#141414] hover:text-[#C9473B] hover:border-[#C9473B]'
                 }`}
               >
                 Jackets
@@ -381,8 +381,8 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
                 onClick={() => setActiveFilter('shirts')}
                 className={`font-mono text-xs uppercase px-4 py-2 rounded-full transition-all font-bold ${
                   activeFilter === 'shirts'
-                    ? 'bg-[#b9d070] text-[#293500] shadow-md'
-                    : 'bg-[#292a2e] text-[#c7c5d3] hover:text-white border border-[#464651]/40'
+                    ? 'bg-[#C9473B] text-white shadow-md border border-[#C9473B]'
+                    : 'bg-[#FFFFFF] border border-[#DCD5C9] text-[#141414] hover:text-[#C9473B] hover:border-[#C9473B]'
                 }`}
               >
                 Shirts
@@ -402,9 +402,9 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.4 }}
                   onClick={() => onSelectProduct(prod.productId)}
-                  className="group flex flex-col bg-[#1a1b20] border border-[#343439] rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                  className="group flex flex-col bg-[#FFFFFF] border border-[#DCD5C9] rounded-2xl overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer"
                 >
-                  <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#1e1f24]">
+                  <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#FAF7F2]">
                     <ImageReveal
                       src={prod.image}
                       alt={prod.title}
@@ -413,13 +413,13 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
                       className="group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
                     <div className="absolute top-3 left-3">
-                      <span className="bg-[#343439]/90 backdrop-blur-md font-mono text-[9px] uppercase text-[#b9d070] px-3 py-1 rounded-full font-bold shadow-xs">
+                      <span className="bg-[#FFFFFF]/90 backdrop-blur-md font-mono text-[9px] uppercase text-[#C9473B] border border-[#DCD5C9] px-3 py-1 rounded-full font-bold shadow-xs">
                         {prod.tag}
                       </span>
                     </div>
                     {prod.badge && (
                       <div className="absolute bottom-3 right-3">
-                        <span className="bg-[#191970]/80 backdrop-blur-md font-mono text-[9px] text-[#accae8] px-2.5 py-1 rounded font-bold">
+                        <span className="bg-[#C9473B] font-mono text-[9px] text-white px-2.5 py-1 rounded font-bold shadow-xs">
                           {prod.badge}
                         </span>
                       </div>
@@ -428,16 +428,16 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
 
                   <div className="p-5 flex flex-col justify-between flex-grow gap-4">
                     <div>
-                      <h3 className="font-serif-heavy text-lg uppercase text-white leading-snug group-hover:text-[#b9d070] transition-colors">
+                      <h3 className="font-serif-heavy text-lg uppercase text-[#141414] leading-snug group-hover:text-[#C9473B] transition-colors">
                         {prod.title}
                       </h3>
-                      <p className="font-mono text-[10px] uppercase text-[#c7c5d3] mt-1 tracking-wider">
+                      <p className="font-mono text-[10px] uppercase text-[#6E685E] mt-1 tracking-wider">
                         {prod.subtitle}
                       </p>
                     </div>
 
-                    <div className="flex items-center justify-between pt-3 border-t border-[#343439] bg-[#0d0e12]/50 -mx-5 -mb-5 p-5">
-                      <span className="font-satoshi text-base font-bold text-[#b9d070] tabular-nums">
+                    <div className="flex items-center justify-between pt-3 border-t border-[#DCD5C9] bg-[#FAF7F2]/50 -mx-5 -mb-5 p-5">
+                      <span className="font-satoshi text-base font-bold text-[#C9473B] tabular-nums">
                         {formatPrice(prod.price, symbol, exchangeRate)}
                       </span>
                       <button
@@ -445,7 +445,7 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
                           e.stopPropagation();
                           onSelectProduct(prod.productId);
                         }}
-                        className="bg-[#b9d070] text-[#293500] hover:bg-[#d4ed89] font-mono text-xs font-bold uppercase px-4 py-2 rounded-lg transition-all flex items-center gap-1 shrink-0"
+                        className="bg-[#C9473B] text-white hover:bg-[#b03c31] font-mono text-xs font-bold uppercase px-4 py-2 rounded-lg transition-all flex items-center gap-1 shrink-0 shadow-xs"
                       >
                         <Plus className="w-3.5 h-3.5 stroke-[3]" />
                         <span>Reserve</span>
@@ -460,29 +460,29 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 3: EDITORIAL SPLIT MANIFESTO BLOCK (The Heart of Art & Upcycling) */}
+      {/* SECTION 3: EDITORIAL SPLIT MANIFESTO BLOCK                                */}
       {/* ========================================================================= */}
-      <section className="relative w-full bg-[#121317] py-16 sm:py-28 overflow-hidden border-b border-[#343439]/60">
+      <section className="relative w-full bg-[#EFEBE3] py-16 sm:py-28 overflow-hidden border-b border-[#DCD5C9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Visual Framing Plinth */}
             <div className="lg:col-span-5 relative">
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-[#292a2e] border border-[#343439]">
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl bg-[#FFFFFF] border border-[#DCD5C9]">
                 <ImageReveal
                   src="https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&q=80&w=1000"
                   alt="Kenyan garment artisans hand-stitching raw denim"
                   containerClassName="w-full h-full"
-                  className="brightness-90 contrast-105"
+                  className="brightness-95 contrast-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d0e12]/90 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#EFEBE3]/80 via-transparent to-transparent pointer-events-none" />
 
-                {/* Frosted Technical Overlay Chip matching Dyslove Inspiration */}
-                <div className="absolute bottom-4 left-4 right-4 bg-[#191970]/50 backdrop-blur-xl p-4 rounded-xl border border-white/10 shadow-lg">
+                {/* Frosted Technical Overlay Chip */}
+                <div className="absolute bottom-4 left-4 right-4 bg-[#FFFFFF]/90 backdrop-blur-xl p-4 rounded-xl border border-[#DCD5C9] shadow-md">
                   <div className="flex justify-between items-center mb-1">
-                    <span className="font-serif-heavy text-base uppercase text-white">Royal Blue</span>
-                    <span className="font-mono text-xs text-[#b9d070] font-bold">#191970</span>
+                    <span className="font-serif-heavy text-base uppercase text-[#141414]">Atelier Crimson</span>
+                    <span className="font-mono text-xs text-[#C9473B] font-bold">#C9473B</span>
                   </div>
-                  <div className="flex items-center justify-between font-mono text-[9px] text-[#accae8] uppercase tracking-wider font-bold">
+                  <div className="flex items-center justify-between font-mono text-[9px] text-[#6E685E] uppercase tracking-wider font-bold">
                     <span>CIRCULAR SYSTEM V.2</span>
                     <span>NAIROBI ATELIER</span>
                   </div>
@@ -490,11 +490,11 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
               </div>
 
               {/* Asymmetric Accent Plinth */}
-              <div className="hidden sm:block absolute -bottom-6 -right-6 bg-[#b9d070] text-[#293500] p-5 rounded-2xl shadow-2xl max-w-xs border border-[#b9d070]/30">
-                <p className="font-mono text-xs uppercase tracking-wider font-bold mb-1">
+              <div className="hidden sm:block absolute -bottom-6 -right-6 bg-[#FAF7F2] text-[#141414] p-5 rounded-2xl shadow-xl max-w-xs border border-[#DCD5C9]">
+                <p className="font-mono text-xs uppercase tracking-wider font-bold mb-1 text-[#C9473B]">
                   ZERO DEADSTOCK DISCARD
                 </p>
-                <p className="font-satoshi text-xs leading-relaxed font-medium">
+                <p className="font-satoshi text-xs leading-relaxed font-medium text-[#5E5950]">
                   100% of scrap leather and vintage military surplus repurposed into functional capsule garments.
                 </p>
               </div>
@@ -503,45 +503,45 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
             {/* Right Content Block */}
             <div className="lg:col-span-7 lg:pl-6 space-y-6">
               <div>
-                <span className="font-mono text-xs uppercase tracking-widest text-[#b9d070] block mb-1 font-bold">
+                <span className="font-mono text-xs uppercase tracking-widest text-[#C9473B] block mb-1 font-bold">
                   02 / THE MANIFESTO
                 </span>
-                <h2 className="font-serif-heavy text-3xl sm:text-5xl uppercase text-white tracking-tight leading-tight">
+                <h2 className="font-serif-heavy text-3xl sm:text-5xl uppercase text-[#141414] tracking-tight leading-tight">
                   The Heart of Art & Upcycling.
                 </h2>
-                <p className="font-satoshi text-sm sm:text-base md:text-lg text-[#c7c5d3] leading-relaxed font-normal mt-4">
+                <p className="font-satoshi text-sm sm:text-base md:text-lg text-[#5E5950] leading-relaxed font-normal mt-4">
                   Nairobi Apparel District is a Kenyan streetwear house built to challenge disposable hyper-consumerism. We intercept discarded textiles, post-consumer leathers, and military surplus—transforming them into collectible, customer-tailored armor for the modern metropolis.
                 </p>
               </div>
 
               {/* 3 Minimalist Value Pillars Bento Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-                <div className="bg-[#1a1b20] border border-[#343439] p-4 rounded-2xl space-y-2">
-                  <div className="w-8 h-8 rounded-full bg-[#191970] flex items-center justify-center text-[#b9d070] mb-2">
+                <div className="bg-[#FFFFFF] border border-[#DCD5C9] p-4 rounded-2xl space-y-2 shadow-xs">
+                  <div className="w-8 h-8 rounded-full bg-[#FAF7F2] border border-[#DCD5C9] flex items-center justify-center text-[#C9473B] mb-2">
                     <RotateCcw className="w-4 h-4" />
                   </div>
-                  <h3 className="font-serif-heavy text-sm uppercase text-white">Upcycled Materials</h3>
-                  <p className="font-satoshi text-xs text-[#c7c5d3] leading-relaxed">
+                  <h3 className="font-serif-heavy text-sm uppercase text-[#141414]">Upcycled Materials</h3>
+                  <p className="font-satoshi text-xs text-[#5E5950] leading-relaxed">
                     Repurposing local vintage leather, military canvas, and organic off-cuts into structured streetwear.
                   </p>
                 </div>
 
-                <div className="bg-[#1a1b20] border border-[#343439] p-4 rounded-2xl space-y-2">
-                  <div className="w-8 h-8 rounded-full bg-[#191970] flex items-center justify-center text-[#accae8] mb-2">
+                <div className="bg-[#FFFFFF] border border-[#DCD5C9] p-4 rounded-2xl space-y-2 shadow-xs">
+                  <div className="w-8 h-8 rounded-full bg-[#FAF7F2] border border-[#DCD5C9] flex items-center justify-center text-[#C9473B] mb-2">
                     <Scissors className="w-4 h-4" />
                   </div>
-                  <h3 className="font-serif-heavy text-sm uppercase text-white">Artisan Tailored</h3>
-                  <p className="font-satoshi text-xs text-[#c7c5d3] leading-relaxed">
+                  <h3 className="font-serif-heavy text-sm uppercase text-[#141414]">Artisan Tailored</h3>
+                  <p className="font-satoshi text-xs text-[#5E5950] leading-relaxed">
                     Hand-cut and precision assembled by master tailors in Nairobi with numbered run certifications.
                   </p>
                 </div>
 
-                <div className="bg-[#1a1b20] border border-[#343439] p-4 rounded-2xl space-y-2">
-                  <div className="w-8 h-8 rounded-full bg-[#191970] flex items-center justify-center text-[#b9d070] mb-2">
+                <div className="bg-[#FFFFFF] border border-[#DCD5C9] p-4 rounded-2xl space-y-2 shadow-xs">
+                  <div className="w-8 h-8 rounded-full bg-[#FAF7F2] border border-[#DCD5C9] flex items-center justify-center text-[#C9473B] mb-2">
                     <Infinity className="w-4 h-4" />
                   </div>
-                  <h3 className="font-serif-heavy text-sm uppercase text-white">Zero Waste Mindset</h3>
-                  <p className="font-satoshi text-xs text-[#c7c5d3] leading-relaxed">
+                  <h3 className="font-serif-heavy text-sm uppercase text-[#141414]">Zero Waste Mindset</h3>
+                  <p className="font-satoshi text-xs text-[#5E5950] leading-relaxed">
                     Designed to age gracefully with lifelong repair protocols, actively combatting fast-fashion landfill dumps.
                   </p>
                 </div>
@@ -552,7 +552,7 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 4: EDITORIAL RUNWAY GALLERY (From Original Design)                */}
+      {/* SECTION 4: EDITORIAL RUNWAY GALLERY                                       */}
       {/* ========================================================================= */}
       <section className="py-16 sm:py-24 bg-[#EFEBE3] text-[#141414] border-b border-[#DCD5C9]" id="editorial-runway">
         <div className="px-4 sm:px-8 md:px-12 lg:px-16 max-w-[1920px] mx-auto w-full mb-8">
@@ -623,28 +623,28 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
             ))}
 
             {/* Final Slide: Studio 18 Invitation Card */}
-            <div className="shrink-0 w-[290px] sm:w-[380px] md:w-[420px] bg-[#1B2215] text-white rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden border border-[#DCD5C9] select-none">
+            <div className="shrink-0 w-[290px] sm:w-[380px] md:w-[420px] bg-[#FFFFFF] text-[#141414] rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between shadow-xl relative overflow-hidden border border-[#DCD5C9] select-none">
               <div className="space-y-4 relative z-10">
-                <span className="font-mono text-xs text-[#F7C2E8] tracking-[0.25em] uppercase block font-bold">
+                <span className="font-mono text-xs text-[#C9473B] tracking-[0.25em] uppercase block font-bold">
                   + STUDIO 18 · NAIROBI
                 </span>
 
-                <h3 className="font-serif-heavy text-2xl sm:text-4xl uppercase leading-none text-[#FDE3F8]">
+                <h3 className="font-serif-heavy text-2xl sm:text-4xl uppercase leading-none text-[#141414]">
                   Come & say hello to us
                 </h3>
 
-                <div className="space-y-3 pt-2 font-satoshi text-xs text-white/80">
-                  <div className="flex items-center gap-2.5 bg-white/10 p-3 rounded-2xl border border-white/20">
-                    <MapPin className="w-4 h-4 text-[#F7C2E8] shrink-0" />
+                <div className="space-y-3 pt-2 font-satoshi text-xs text-[#5E5950]">
+                  <div className="flex items-center gap-2.5 bg-[#FAF7F2] p-3 rounded-2xl border border-[#DCD5C9]">
+                    <MapPin className="w-4 h-4 text-[#C9473B] shrink-0" />
                     <span>Kuona Trust Studio 18, Kilimani, Kenya</span>
                   </div>
 
                   <a
                     href="tel:+254794417210"
-                    className="flex items-center gap-2.5 bg-white/10 p-3 rounded-2xl border border-white/20 hover:border-[#C9473B] transition-colors block"
+                    className="flex items-center gap-2.5 bg-[#FAF7F2] p-3 rounded-2xl border border-[#DCD5C9] hover:border-[#C9473B] transition-colors block"
                   >
                     <Phone className="w-4 h-4 text-[#C9473B] shrink-0" />
-                    <span className="font-mono font-bold text-white">+254 794 417210</span>
+                    <span className="font-mono font-bold text-[#141414]">+254 794 417210</span>
                   </a>
                 </div>
               </div>
@@ -666,20 +666,20 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
       {/* ========================================================================= */}
       {/* SECTION 5: NEWSLETTER & BRAND BENEFITS STRIP                             */}
       {/* ========================================================================= */}
-      <section className="w-full bg-[#1a1b20] py-16 sm:py-24 border-t border-[#343439]">
+      <section className="w-full bg-[#FAF7F2] py-16 sm:py-24 border-t border-[#DCD5C9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-12 space-y-16">
           {/* Minimalist Newsletter Box */}
-          <div className="bg-[#191970]/30 backdrop-blur-2xl p-8 lg:p-12 rounded-3xl relative overflow-hidden border border-[#464651]/50 shadow-xl">
-            <div className="pointer-events-none absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-[#b9d070]/10 blur-[100px]" />
+          <div className="bg-[#FFFFFF] p-8 lg:p-12 rounded-3xl relative overflow-hidden border border-[#DCD5C9] shadow-xs">
+            <div className="pointer-events-none absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-[#C9473B]/5 blur-[100px]" />
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
               <div className="lg:col-span-7 space-y-2">
-                <span className="font-mono text-xs uppercase tracking-widest text-[#b9d070] block font-bold">
+                <span className="font-mono text-xs uppercase tracking-widest text-[#C9473B] block font-bold">
                   ATELIER INSIDER ACCESS
                 </span>
-                <h2 className="font-serif-heavy text-2xl sm:text-4xl uppercase text-white leading-tight">
+                <h2 className="font-serif-heavy text-2xl sm:text-4xl uppercase text-[#141414] leading-tight">
                   Subscribe and receive 10% off your next purchase.
                 </h2>
-                <p className="font-satoshi text-sm text-[#c7c5d3] max-w-lg">
+                <p className="font-satoshi text-sm text-[#5E5950] max-w-lg">
                   Receive secret archive invitations, drop coordinates, and custom fitting reservations before global releases.
                 </p>
               </div>
@@ -692,18 +692,18 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
                     onChange={(e) => setNewsletterEmail(e.target.value)}
                     placeholder="YOUR EMAIL PROTOCOL"
                     required
-                    className="flex-1 bg-[#0d0e12]/80 text-white placeholder:text-[#918f9d] font-mono text-xs px-4 py-3.5 rounded-xl border border-[#464651] focus:outline-none focus:border-[#b9d070] transition-colors"
+                    className="flex-1 bg-[#FAF7F2] text-[#141414] placeholder:text-[#6E685E] font-mono text-xs px-4 py-3.5 rounded-xl border border-[#DCD5C9] focus:outline-none focus:border-[#C9473B] transition-colors"
                   />
                   <button
                     type="submit"
-                    className="bg-[#b9d070] hover:bg-[#d4ed89] text-[#293500] font-mono text-xs font-bold uppercase px-6 py-3.5 rounded-xl transition-all hover:scale-[0.98] shadow-md whitespace-nowrap"
+                    className="bg-[#C9473B] hover:bg-[#b03c31] text-white font-mono text-xs font-bold uppercase px-6 py-3.5 rounded-xl transition-all shadow-md whitespace-nowrap"
                   >
                     Join District
                   </button>
                 </form>
 
                 {newsletterSuccess && (
-                  <p className="font-mono text-xs text-[#b9d070] mt-2 font-bold">
+                  <p className="font-mono text-xs text-[#C9473B] mt-2 font-bold">
                     ✓ Address logged into Atelier protocol. Check your signal.
                   </p>
                 )}
@@ -712,44 +712,44 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
           </div>
 
           {/* Minimalist Benefits Strip */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-4 border-t border-[#343439]/60">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-4 border-t border-[#DCD5C9]">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#0d0e12] flex items-center justify-center text-[#b9d070] border border-[#343439]">
+              <div className="w-10 h-10 rounded-full bg-[#FAF7F2] flex items-center justify-center text-[#C9473B] border border-[#DCD5C9]">
                 <Truck className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-mono text-xs font-bold uppercase text-white">Free Delivery</h4>
-                <p className="font-satoshi text-[11px] text-[#c7c5d3]">Orders over $100 worldwide</p>
+                <h4 className="font-mono text-xs font-bold uppercase text-[#141414]">Free Delivery</h4>
+                <p className="font-satoshi text-[11px] text-[#5E5950]">Orders over $100 worldwide</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#0d0e12] flex items-center justify-center text-[#accae8] border border-[#343439]">
+              <div className="w-10 h-10 rounded-full bg-[#FAF7F2] flex items-center justify-center text-[#C9473B] border border-[#DCD5C9]">
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-mono text-xs font-bold uppercase text-white">7 Month Warranty</h4>
-                <p className="font-satoshi text-[11px] text-[#c7c5d3]">Complimentary seam repairs</p>
+                <h4 className="font-mono text-xs font-bold uppercase text-[#141414]">7 Month Warranty</h4>
+                <p className="font-satoshi text-[11px] text-[#5E5950]">Complimentary seam repairs</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#0d0e12] flex items-center justify-center text-[#b9d070] border border-[#343439]">
+              <div className="w-10 h-10 rounded-full bg-[#FAF7F2] flex items-center justify-center text-[#C9473B] border border-[#DCD5C9]">
                 <Globe className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-mono text-xs font-bold uppercase text-white">Worldwide Tracked</h4>
-                <p className="font-satoshi text-[11px] text-[#c7c5d3]">DHL Express priority logistics</p>
+                <h4 className="font-mono text-xs font-bold uppercase text-[#141414]">Worldwide Tracked</h4>
+                <p className="font-satoshi text-[11px] text-[#5E5950]">DHL Express priority logistics</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#0d0e12] flex items-center justify-center text-[#accae8] border border-[#343439]">
+              <div className="w-10 h-10 rounded-full bg-[#FAF7F2] flex items-center justify-center text-[#C9473B] border border-[#DCD5C9]">
                 <RefreshCw className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-mono text-xs font-bold uppercase text-white">Effortless Exchange</h4>
-                <p className="font-satoshi text-[11px] text-[#c7c5d3]">14-day archival exchange</p>
+                <h4 className="font-mono text-xs font-bold uppercase text-[#141414]">Effortless Exchange</h4>
+                <p className="font-satoshi text-[11px] text-[#5E5950]">14-day archival exchange</p>
               </div>
             </div>
           </div>
