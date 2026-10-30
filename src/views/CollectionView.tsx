@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, useReducedMotion } from 'framer-motion';
 import { MODELS, ModelItem } from '../data/models';
 import {
   MapPin,
@@ -21,6 +21,7 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollTrackRef = useRef<HTMLDivElement>(null);
   const [activeModelIndex, setActiveModelIndex] = useState(0);
+  const shouldReduceMotion = useReducedMotion();
 
   // Motion scroll hook for smooth horizontal parallax
   const { scrollYProgress } = useScroll({
@@ -29,16 +30,17 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
   });
 
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 90,
-    damping: 20,
+    stiffness: 120,
+    damping: 24,
     restDelta: 0.001,
   });
 
   // Transform scroll progress to horizontal translation percentage
-  const xTransform = useTransform(smoothProgress, [0, 1], ['0%', '-88%']);
+  const rawXTransform = useTransform(smoothProgress, [0, 1], ['0%', '-80%']);
+  const xTransform = shouldReduceMotion ? '0%' : rawXTransform;
 
   // Parallax transform speeds for different image layers
-  const imageYParallax = useTransform(smoothProgress, [0, 1], ['0%', '-12%']);
+  const imageYParallax = useTransform(smoothProgress, [0, 1], ['0%', '-8%']);
 
   // Dynamic active model index tracking based on scroll
   useEffect(() => {
@@ -54,7 +56,7 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
   return (
     <div className="bg-[#FFFFFF] text-[#141414] min-h-screen selection:bg-[#C9473B] selection:text-white">
       {/* Scrollable Container Pinning Section */}
-      <div ref={containerRef} className="relative h-[600vh] w-full">
+      <div ref={containerRef} className="relative h-[250vh] sm:h-[280vh] w-full">
         {/* Sticky Viewport Frame */}
         <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-between pt-20 pb-6 px-4 sm:px-8 md:px-12 bg-[#FFFFFF]">
           {/* Top Brand & Section Title Bar */}
