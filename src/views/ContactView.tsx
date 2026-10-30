@@ -171,7 +171,7 @@ export const ContactView: React.FC = () => {
               </a>
 
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/nairobiappareldistrict"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-3 p-4 bg-[#FAF7F2] border border-[#DCD5C9] hover:border-[#C9473B] transition-colors rounded-2xl group shadow-xs"
