@@ -6,7 +6,7 @@ This repository includes a Render Blueprint in `render.yaml`.
 
 1. Sign in to [Render](https://dashboard.render.com/).
 2. Choose **New → Blueprint** and connect this GitHub repository.
-3. Select the `deploy/render-production` branch for the initial preview, then apply the Blueprint.
+3. Merge [PR #1](https://github.com/nathantendosaas-star2/NAD/pull/1) into `main`, then select the `main` branch and apply the Blueprint.
 4. In the new web service's Environment settings, set strong, unique values for:
    - `ADMIN_USERNAME`
    - `ADMIN_PASSWORD`
