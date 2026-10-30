@@ -136,6 +136,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
               alt="NAD Model in art-cycled pieces"
               containerClassName="w-full h-full"
               className="brightness-90 contrast-105"
+              priority
+              sizes="100vw"
             />
             {/* Scrim overlay softly blending to cream */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#EFEBE3] via-[#EFEBE3]/45 to-black/35 pointer-events-none" />
