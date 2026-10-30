@@ -323,7 +323,7 @@ export default function App() {
         />
 
         {/* Main Page View with transitions */}
-        <main className="flex-1 overflow-hidden">
+        <main className="flex-1 overflow-x-clip w-full">
           <AnimatePresence mode="wait">
             <motion.div
               key={
