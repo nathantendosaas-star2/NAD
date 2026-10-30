@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { getResponsiveImageProps } from '../utils/responsiveImage';
 
 interface ImageWithFallbackProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   fallbackText?: string;
@@ -11,18 +12,32 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
   className = '',
   wrapperClassName = '',
   fallbackText,
+  loading = 'lazy',
+  fetchPriority = 'auto',
+  sizes = '(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw',
+  onLoad,
+  onError,
   ...props
 }) => {
   const [hasError, setHasError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
+  useEffect(() => {
+    setHasError(false);
+    setIsLoaded(false);
+  }, [src]);
+
+  const responsive = src ? getResponsiveImageProps(src, sizes) : null;
+
   if (hasError || !src) {
     return (
       <div
-        className={`flex flex-col items-center justify-center bg-[#E0DCD6] text-[#1E1E1E] p-4 text-center select-none ${wrapperClassName || className}`}
+        role="img"
+        aria-label={alt}
+        className={`flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_50%_35%,#fffaf4_0%,#e8dfd3_58%,#d7cbbd_100%)] text-[#C9473B] p-4 text-center select-none ${wrapperClassName || className}`}
       >
-        <span className="font-clash text-xl uppercase tracking-tighter opacity-40">NAD</span>
-        <span className="font-satoshi text-[11px] uppercase tracking-widest opacity-60 mt-2">
+        <span className="font-clash text-xl uppercase tracking-tighter opacity-60">NAD</span>
+        <span className="font-satoshi text-[11px] uppercase tracking-widest opacity-70 mt-2">
           {fallbackText || alt}
         </span>
       </div>
@@ -32,17 +47,30 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
   return (
     <div className={`relative overflow-hidden ${wrapperClassName}`}>
       {!isLoaded && (
-        <div className="absolute inset-0 bg-[#D8D5CE] animate-pulse" />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[linear-gradient(110deg,#e9e3da_8%,#f8f4ed_18%,#e9e3da_33%)] bg-[length:200%_100%] animate-pulse"
+        />
       )}
       <img
-        src={src}
+        {...props}
+        src={responsive!.src}
+        srcSet={responsive!.srcSet}
+        sizes={responsive!.sizes}
         alt={alt}
         referrerPolicy="no-referrer"
-        loading="lazy"
-        onLoad={() => setIsLoaded(true)}
-        onError={() => setHasError(true)}
-        className={`transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${className}`}
-        {...props}
+        loading={loading}
+        fetchPriority={fetchPriority}
+        decoding="async"
+        onLoad={(event) => {
+          setIsLoaded(true);
+          onLoad?.(event);
+        }}
+        onError={(event) => {
+          setHasError(true);
+          onError?.(event);
+        }}
+        className={`relative transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${className}`}
       />
     </div>
   );
