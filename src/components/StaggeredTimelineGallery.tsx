@@ -91,6 +91,7 @@ export const StaggeredTimelineGallery: React.FC<StaggeredTimelineGalleryProps> =
                       direction="up"
                       containerClassName="w-full h-full"
                       className="transition-transform duration-700 group-hover:scale-105" 
+                      sizes="(min-width: 768px) 33vw, 100vw"
                     />
                   </div>
                   <h3 className="font-serif-heavy text-xl uppercase text-[#141414] group-hover:text-[#C9473B] transition-colors">{product.name}</h3>
