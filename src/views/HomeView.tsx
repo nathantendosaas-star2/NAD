@@ -110,12 +110,12 @@ export const HomeView: React.FC<HomeViewProps> = ({
   };
 
   const categories = [
-    { id: 'men', label: 'MEN', count: 'Tailored Shirts & Outerwear', img: 'https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&q=80&w=600' },
-    { id: 'women', label: 'WOMEN', count: 'Kimono Silhouettes & Bodices', img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=600' },
-    { id: 'exclusive', label: 'EXCLUSIVE', count: 'One-of-One Atelier Drops', img: 'https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&q=80&w=600' },
-    { id: 'unisex', label: 'UNISEX', count: 'Raw Selvedge Denim Cargos', img: 'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&q=80&w=600' },
-    { id: 'accessories', label: 'ACCESSORIES', count: 'Canvas Totes & Distressed Hats', img: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=600' },
-    { id: 'uncategorized', label: 'UNCATEGORIZED', count: 'Studio Experimental Archives', img: 'https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&q=80&w=600' },
+    { id: 'men', label: 'MEN', count: 'Tailored Shirts & Outerwear', img: 'https://nairobiappareldistrict.com/wp-content/uploads/2025/11/charis-ex-819x1024.jpg' },
+    { id: 'women', label: 'WOMEN', count: 'Kimono Silhouettes & Bodices', img: 'https://nairobiappareldistrict.com/wp-content/uploads/2025/10/PTT2-819x1024.jpg' },
+    { id: 'exclusive', label: 'EXCLUSIVE', count: 'One-of-One Atelier Drops', img: 'https://nairobiappareldistrict.com/wp-content/uploads/2025/11/ex-2-819x1024.jpg' },
+    { id: 'unisex', label: 'UNISEX', count: 'Raw Selvedge Denim Cargos', img: 'https://nairobiappareldistrict.com/wp-content/uploads/2025/11/unisex-819x1024.jpg' },
+    { id: 'accessories', label: 'ACCESSORIES', count: 'Canvas Totes & Distressed Hats', img: 'https://nairobiappareldistrict.com/wp-content/uploads/2026/08/fela-tote-762x1024.jpg' },
+    { id: 'uncategorized', label: 'UNCATEGORIZED', count: 'Studio Experimental Archives', img: 'https://nairobiappareldistrict.com/wp-content/uploads/2025/11/vest-front-762x1024.jpg' },
   ];
 
   return (
