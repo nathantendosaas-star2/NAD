@@ -1,5 +1,6 @@
 import express from 'express';
 import { createServer as createViteServer } from 'vite';
+import { timingSafeEqual } from 'node:crypto';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { PRODUCTS } from './src/data/products.ts';
@@ -49,9 +50,47 @@ let inventoryStore = [...PRODUCTS];
 
 async function createServer() {
   const app = express();
-  const port = process.env.PORT || 3000;
+  const port = Number(process.env.PORT || 3000);
+  const isProduction = process.env.NODE_ENV === 'production';
 
   app.use(express.json({ limit: '10mb' }));
+  app.get('/health', (_req, res) => res.status(200).json({ status: 'ok' }));
+
+  // Fail closed: administrative APIs and the admin screen are unavailable
+  // until Render has both credentials configured.
+  const adminAuth: express.RequestHandler = (req, res, next) => {
+    const username = process.env.ADMIN_USERNAME;
+    const password = process.env.ADMIN_PASSWORD;
+    if (!username || !password) {
+      return res.status(503).json({ error: 'Admin access is not configured.' });
+    }
+    const header = req.headers.authorization || '';
+    const [scheme, encoded] = header.split(' ');
+    if (scheme !== 'Basic' || !encoded) {
+      res.setHeader('WWW-Authenticate', 'Basic realm="NAD Admin", charset="UTF-8"');
+      return res.status(401).send('Authentication required');
+    }
+    let supplied = '';
+    try { supplied = Buffer.from(encoded, 'base64').toString('utf8'); } catch { /* invalid header */ }
+    const separator = supplied.indexOf(':');
+    const suppliedUser = separator >= 0 ? supplied.slice(0, separator) : '';
+    const suppliedPass = separator >= 0 ? supplied.slice(separator + 1) : '';
+    const safeEqual = (a: string, b: string) => {
+      const left = Buffer.from(a);
+      const right = Buffer.from(b);
+      return left.length === right.length && timingSafeEqual(left, right);
+    };
+    if (!safeEqual(suppliedUser, username) || !safeEqual(suppliedPass, password)) {
+      res.setHeader('WWW-Authenticate', 'Basic realm="NAD Admin", charset="UTF-8"');
+      return res.status(401).send('Invalid credentials');
+    }
+    next();
+  };
+
+  if (isProduction) {
+    app.use('/admin', adminAuth);
+    app.use('/api/admin', adminAuth);
+  }
 
   // Telemetry Middleware
   app.use((req, res, next) => {
@@ -107,13 +146,14 @@ async function createServer() {
     next();
   });
 
-  // Vite server in middleware mode
-  const vite = await createViteServer({
+  // Development uses Vite middleware; Render serves the compiled Vite bundle.
+  const vite = isProduction ? null : await createViteServer({
     server: { middlewareMode: true },
     appType: 'custom',
   });
-
-  app.use(vite.middlewares);
+  if (vite) {
+    app.use(vite.middlewares);
+  }
 
   // API: Location & Currency Detection
   app.get('/api/location', async (req, res) => {
@@ -274,36 +314,38 @@ async function createServer() {
     });
   });
 
-  // Serve index.html for SPA routes (including /admin)
-  app.use('*', async (req, res, next) => {
-    const url = req.originalUrl;
-    try {
-      let template = await vite.transformIndexHtml(
-        url,
-        `
-        <!DOCTYPE html>
-        <html lang="en">
-          <head>
-            <meta charset="UTF-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>Nairobi Apparel District</title>
-          </head>
-          <body>
-            <div id="root"></div>
-            <script type="module" src="/src/main.tsx"></script>
-          </body>
-        </html>
-      `
-      );
-      res.status(200).set({ 'Content-Type': 'text/html' }).end(template);
-    } catch (e) {
-      vite.ssrFixStacktrace(e as Error);
-      next(e);
-    }
-  });
+  // Production static assets and SPA fallback.
+  if (isProduction) {
+    const distPath = path.join(__dirname, 'dist');
+    app.use(express.static(distPath, { index: false, maxAge: '1d' }));
+    app.get('*', (_req, res) => res.sendFile(path.join(distPath, 'index.html')));
+  } else {
+    app.use('*', async (req, res, next) => {
+      try {
+        const template = await vite!.transformIndexHtml(req.originalUrl, `
+          <!DOCTYPE html>
+          <html lang="en">
+            <head>
+              <meta charset="UTF-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <title>Nairobi Apparel District</title>
+            </head>
+            <body>
+              <div id="root"></div>
+              <script type="module" src="/src/main.tsx"></script>
+            </body>
+          </html>
+        `);
+        res.status(200).set({ 'Content-Type': 'text/html' }).end(template);
+      } catch (e) {
+        vite!.ssrFixStacktrace(e as Error);
+        next(e);
+      }
+    });
+  }
 
-  app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+  app.listen(port, '0.0.0.0', () => {
+    console.log(`NAD server listening on port ${port} (${isProduction ? 'production' : 'development'})`);
   });
 }
 
