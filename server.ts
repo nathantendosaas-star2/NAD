@@ -87,8 +87,10 @@ async function createServer() {
     next();
   };
 
-  app.use('/admin', adminAuth);
-  app.use('/api/admin', adminAuth);
+  if (isProduction) {
+    app.use('/admin', adminAuth);
+    app.use('/api/admin', adminAuth);
+  }
 
   // Telemetry Middleware
   app.use((req, res, next) => {
