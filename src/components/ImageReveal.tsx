@@ -105,7 +105,10 @@ export function ImageReveal({
               fetchPriority={priority ? 'high' : 'auto'}
               decoding="async"
               onLoad={() => setImageLoaded(true)}
-              onError={() => setImageFailed(true)}
+              onError={() => {
+                console.warn('[NAD image] Failed to load:', responsive?.src || src);
+                setImageFailed(true);
+              }}
               style={{ y, scale }}
               className={`w-full h-full transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'} ${className.includes('object-') ? '' : 'object-cover'} ${className}`}
             />
