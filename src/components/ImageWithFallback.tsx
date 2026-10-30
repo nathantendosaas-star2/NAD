@@ -58,7 +58,6 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
         srcSet={responsive!.srcSet}
         sizes={responsive!.sizes}
         alt={alt}
-        referrerPolicy="no-referrer"
         loading={loading}
         fetchPriority={fetchPriority}
         decoding="async"
