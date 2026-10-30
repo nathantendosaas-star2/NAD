@@ -208,6 +208,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
         </div>
 
+        <p className="mt-6 font-satoshi text-[10px] uppercase tracking-widest text-[#8A8277]">Photography via Unsplash</p>
+
         {/* Legal Row */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#DCD5C9] gap-4 font-satoshi text-[11px] text-[#6E685E]">
           <p>© 2025 Nairobi Apparel District Worldwide. All rights reserved.</p>
