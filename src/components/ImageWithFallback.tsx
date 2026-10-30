@@ -19,12 +19,21 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
   onError,
   ...props
 }) => {
+  const imgRef = React.useRef<HTMLImageElement>(null);
   const [hasError, setHasError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setHasError(false);
     setIsLoaded(false);
+
+    if (imgRef.current && imgRef.current.complete) {
+      if (imgRef.current.naturalWidth > 0) {
+        setIsLoaded(true);
+      } else {
+        setHasError(true);
+      }
+    }
   }, [src]);
 
   const responsive = src ? getResponsiveImageProps(src, sizes) : null;
@@ -54,6 +63,7 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
       )}
       <img
         {...props}
+        ref={imgRef}
         src={responsive!.src}
         srcSet={responsive!.srcSet}
         sizes={responsive!.sizes}
