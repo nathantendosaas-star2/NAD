@@ -66,6 +66,7 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
           onLoad?.(event);
         }}
         onError={(event) => {
+          console.warn('[NAD image] Failed to load:', responsive?.src || src);
           setHasError(true);
           onError?.(event);
         }}
