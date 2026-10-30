@@ -178,7 +178,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/nairobiappareldistrict"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-[#C9473B] transition-colors"
