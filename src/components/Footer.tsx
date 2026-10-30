@@ -168,12 +168,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <ul className="space-y-2.5 font-satoshi text-xs text-[#6E685E]">
               <li>
                 <a
-                  href="https://wa.me/254700000000"
+                  href="https://wa.me/254794417210"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-[#C9473B] transition-colors"
                 >
-                  WhatsApp: +254 700 000 000
+                  WhatsApp: +254 794 417210
                 </a>
               </li>
               <li>
