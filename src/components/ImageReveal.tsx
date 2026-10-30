@@ -26,12 +26,21 @@ export function ImageReveal({
   sizes = '(min-width: 1024px) 50vw, 100vw',
 }: ImageRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
   const [imageFailed, setImageFailed] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     setImageFailed(false);
     setImageLoaded(false);
+
+    if (imgRef.current && imgRef.current.complete) {
+      if (imgRef.current.naturalWidth > 0) {
+        setImageLoaded(true);
+      } else {
+        setImageFailed(true);
+      }
+    }
   }, [src]);
 
   const { scrollYProgress } = useScroll({
@@ -70,8 +79,7 @@ export function ImageReveal({
       <motion.div
         variants={variants}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-10%' }}
+        animate="visible"
         className="relative w-full h-full"
       >
         {imageFailed || !src ? (
@@ -97,6 +105,7 @@ export function ImageReveal({
               />
             )}
             <motion.img
+              ref={imgRef}
               src={responsive!.src}
               srcSet={responsive!.srcSet}
               sizes={responsive!.sizes}
