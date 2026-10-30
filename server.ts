@@ -317,6 +317,17 @@ async function createServer() {
   // Production static assets and SPA fallback.
   if (isProduction) {
     const distPath = path.join(__dirname, 'dist');
+
+    // AI Studio exports are reference assets, not application routes.
+    // Vite copies public/assets/aistudio into dist/assets/aistudio. Keep
+    // non-HTML assets available, but never serve exported HTML documents.
+    app.use('/assets/aistudio', (req, res, next) => {
+      if (/\\.html?$/i.test(req.path)) {
+        return res.status(404).type('text/plain').send('Not found');
+      }
+      next();
+    });
+
     app.use(express.static(distPath, { index: false, maxAge: '1d' }));
     app.get('*', (_req, res) => res.sendFile(path.join(distPath, 'index.html')));
   } else {
