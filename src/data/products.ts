@@ -13,7 +13,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockCount: 15,
     images: [
-      'https://nairobiappareldistrict.com/wp-content/uploads/2026/08/fela-tote-762x1024.jpg',
+      'https://images.unsplash.com/photo-1772890753143-24991d807710?auto=format&fit=crop&q=85&w=1200',
     ],
     description: 'Art-cycled heavy canvas tote bag with bold Fela Kuti screen-printed artwork and reinforced stitching.',
     longDescription: [
@@ -41,7 +41,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockCount: 5,
     images: [
-      'https://nairobiappareldistrict.com/wp-content/uploads/2025/11/JFBE-762x1024.jpg',
+      'https://images.unsplash.com/photo-1580644228275-2b826dbec5bf?auto=format&fit=crop&q=85&w=1200',
     ],
     description: 'Limited edition cropped utility jacket with custom brass hardware and hand-distressed selvedge denim trim.',
     longDescription: [
@@ -69,7 +69,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockCount: 8,
     images: [
-      'https://nairobiappareldistrict.com/wp-content/uploads/2025/11/vest-front-762x1024.jpg',
+      'https://images.unsplash.com/photo-1580644228275-2b826dbec5bf?auto=format&fit=crop&q=85&w=1200',
     ],
     description: 'Tactical raw denim vest with utility cargo pockets, D-ring accents, and signature NAD embroidery.',
     longDescription: [
@@ -96,7 +96,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockCount: 3,
     images: [
-      'https://nairobiappareldistrict.com/wp-content/uploads/2025/09/jacket-front-g-762x1024.jpg',
+      'https://images.unsplash.com/photo-1580644228275-2b826dbec5bf?auto=format&fit=crop&q=85&w=1200',
     ],
     description: 'Collaborative art piece featuring Trauphe graphic embroidery on a tailored raw denim cropped canvas.',
     longDescription: [
@@ -123,7 +123,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockCount: 30,
     images: [
-      'https://nairobiappareldistrict.com/wp-content/uploads/2025/09/NAD-BASIC-BLACK-762x1024.jpg',
+      'https://images.unsplash.com/photo-1567934859879-9addfb1e07f8?auto=format&fit=crop&q=85&w=1200',
     ],
     description: 'Heavyweight 240gsm organic cotton tee with puff-printed Nairobi Apparel District script logo.',
     longDescription: [
@@ -150,7 +150,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockCount: 22,
     images: [
-      'https://nairobiappareldistrict.com/wp-content/uploads/2026/08/NAD-WASH-SCRIPT-YELLOW-762x1024.jpg',
+      'https://images.unsplash.com/photo-1567934859879-9addfb1e07f8?auto=format&fit=crop&q=85&w=1200',
     ],
     description: 'Acid-washed vintage black tee with distressed script branding and double-stitched collar.',
     longDescription: [
@@ -177,7 +177,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockCount: 16,
     images: [
-      'https://nairobiappareldistrict.com/wp-content/uploads/2025/10/black-762x1024.jpg',
+      'https://images.unsplash.com/photo-1567934859879-9addfb1e07f8?auto=format&fit=crop&q=85&w=1200',
     ],
     description: 'Oversized graphic tee celebrating the diaspora connection with vintage American tour aesthetic.',
     longDescription: [
@@ -204,7 +204,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockCount: 12,
     images: [
-      'https://nairobiappareldistrict.com/wp-content/uploads/2025/09/jfjg-762x1024.jpg',
+      'https://images.unsplash.com/photo-1580644228275-2b826dbec5bf?auto=format&fit=crop&q=85&w=1200',
     ],
     description: 'Crafted from art-cycled raw denim and heavy organic cotton, featuring hand-embroidered monograms.',
     longDescription: [
@@ -233,7 +233,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockCount: 7,
     images: [
-      'https://nairobiappareldistrict.com/wp-content/uploads/2025/11/jjjf-762x1024.jpg',
+      'https://images.unsplash.com/photo-1580644228275-2b826dbec5bf?auto=format&fit=crop&q=85&w=1200',
     ],
     description: 'Womens cropped iteration of our signature Monogram Military Jacket with elasticated hem.',
     longDescription: [
@@ -260,7 +260,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockCount: 18,
     images: [
-      'https://nairobiappareldistrict.com/wp-content/uploads/2025/11/swahili-shirt-front-762x1024.jpg',
+      'https://images.unsplash.com/photo-1608147152875-b0eb0c53d491?auto=format&fit=crop&q=85&w=1200',
     ],
     description: 'Heavyweight organic linen shirt adorned with Swahili geometric border stitching.',
     longDescription: [
@@ -287,7 +287,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockCount: 9,
     images: [
-      'https://nairobiappareldistrict.com/wp-content/uploads/2025/11/unisex-819x1024.jpg',
+      'https://images.unsplash.com/photo-1580644228275-2b826dbec5bf?auto=format&fit=crop&q=85&w=1200',
     ],
     description: 'Unwashed 14oz Kenyan raw selvedge denim with modular utility pockets and red bar-tacks.',
     longDescription: [
@@ -314,7 +314,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockCount: 6,
     images: [
-      'https://nairobiappareldistrict.com/wp-content/uploads/2026/08/nad-jersey-front-762x1024.jpg',
+      'https://images.unsplash.com/photo-1567934859879-9addfb1e07f8?auto=format&fit=crop&q=85&w=1200',
     ],
     description: 'Deconstructed denim sports jersey constructed from contrast-washed selvedge panels.',
     longDescription: [
