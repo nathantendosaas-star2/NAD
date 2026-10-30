@@ -104,7 +104,6 @@ export function ImageReveal({
               loading={priority ? 'eager' : 'lazy'}
               fetchPriority={priority ? 'high' : 'auto'}
               decoding="async"
-              referrerPolicy="no-referrer"
               onLoad={() => setImageLoaded(true)}
               onError={() => setImageFailed(true)}
               style={{ y, scale }}
