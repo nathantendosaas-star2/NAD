@@ -131,42 +131,6 @@ export const CollectionView: React.FC<CollectionViewProps> = ({
                 );
               })}
 
-              {/* Final Slide: Studio 18 ("Come & say hello to us") from Reference 1 */}
-              <div className="shrink-0 w-[320px] sm:w-[420px] md:w-[480px] bg-[#FAF7F2] border border-[#DCD5C9] rounded-2xl p-6 sm:p-10 flex flex-col justify-between shadow-xl my-auto h-[50vh]">
-                <div className="space-y-4">
-                  <span className="font-mono text-xs text-[#7B7836] font-bold uppercase tracking-widest block">
-                    + STUDIO 18 · NAIROBI
-                  </span>
-                  <h3 className="font-serif-heavy text-2xl sm:text-4xl uppercase text-[#141414] leading-tight">
-                    Come & say hello to us
-                  </h3>
-
-                  <div className="space-y-3 pt-2 font-satoshi text-xs text-[#5E5950]">
-                    <div className="flex items-center gap-3 bg-[#FFFFFF] p-3 rounded-xl border border-[#DCD5C9]">
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#7B7836] shrink-0" />
-                      <span>Kuona Trust Studio 18, Kenya</span>
-                    </div>
-
-                    <a
-                      href="tel:+254794417210"
-                      className="flex items-center gap-3 bg-[#FFFFFF] p-3 rounded-xl border border-[#DCD5C9] hover:border-[#C9473B] transition-colors block"
-                    >
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#C9473B] shrink-0" />
-                      <span className="font-mono font-bold text-[#141414]">+254 794 417210</span>
-                    </a>
-                  </div>
-                </div>
-
-                <div className="pt-4">
-                  <button
-                    onClick={() => onNavigate('contact')}
-                    className="w-full py-3.5 bg-[#141414] text-white hover:bg-[#C9473B] font-mono text-xs font-bold uppercase tracking-widest transition-colors rounded-xl shadow-md flex items-center justify-center gap-2"
-                  >
-                    <MessageSquare className="w-4 h-4" />
-                    <span>Send Us A Message</span>
-                  </button>
-                </div>
-              </div>
             </motion.div>
           </div>
 
